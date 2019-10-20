@@ -1,0 +1,22 @@
+//
+//  AudioVideo-Prefix.pch
+//  AudioVideo
+//
+//  Created by Myron on 2019/10/20.
+//  Copyright © 2019 Myron. All rights reserved.
+//
+
+#ifndef AudioVideo_Prefix_pch
+#define AudioVideo_Prefix_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#ifdef __OBJC__ //保证只有oc文件可以调用pch里面的头文件，一些非OC语言不能调用
+
+#define kAppDidReceiveRemoteControlNotification @"RemoteControlNotification"
+
+#endif
+
+
+#endif /* AudioVideo_Prefix_pch */

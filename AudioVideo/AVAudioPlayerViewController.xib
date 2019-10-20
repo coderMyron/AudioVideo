@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AVAudioPlayerViewController">
+            <connections>
+                <outlet property="musicSinger" destination="9wM-9G-9IV" id="tFn-jd-wdU"/>
+                <outlet property="playOrPause" destination="Vhw-CQ-k2Q" id="tSQ-5E-9Ga"/>
+                <outlet property="playProgress" destination="piA-wH-ChO" id="nUC-FO-0JC"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="l5x-Bw-stp">
+                    <rect key="frame" x="0.0" y="646" width="414" height="250"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vhw-CQ-k2Q">
+                            <rect key="frame" x="52" y="157" width="47" height="30"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <state key="normal" title="播放"/>
+                            <connections>
+                                <action selector="playClick:" destination="-1" eventType="touchUpInside" id="fDu-an-Bb8"/>
+                            </connections>
+                        </button>
+                        <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="piA-wH-ChO">
+                            <rect key="frame" x="10" y="51" width="394" height="2"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="2" id="A76-Z3-2yq"/>
+                            </constraints>
+                        </progressView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9wM-9G-9IV">
+                            <rect key="frame" x="10" y="10" width="394" height="21"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="21" id="WDb-3Q-SEC"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="piA-wH-ChO" firstAttribute="top" secondItem="9wM-9G-9IV" secondAttribute="bottom" constant="20" id="EUL-eV-VQM"/>
+                        <constraint firstItem="9wM-9G-9IV" firstAttribute="top" secondItem="l5x-Bw-stp" secondAttribute="top" constant="10" id="F7n-UJ-G6c"/>
+                        <constraint firstAttribute="trailing" secondItem="9wM-9G-9IV" secondAttribute="trailing" constant="10" id="Hdd-gd-O49"/>
+                        <constraint firstAttribute="trailing" secondItem="piA-wH-ChO" secondAttribute="trailing" constant="10" id="ca0-jU-8rk"/>
+                        <constraint firstAttribute="height" constant="250" id="eDQ-Gc-h0v"/>
+                        <constraint firstItem="piA-wH-ChO" firstAttribute="leading" secondItem="l5x-Bw-stp" secondAttribute="leading" constant="10" id="feb-dU-cwX"/>
+                        <constraint firstItem="9wM-9G-9IV" firstAttribute="leading" secondItem="l5x-Bw-stp" secondAttribute="leading" constant="10" id="hDY-37-YhW"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="l5x-Bw-stp" secondAttribute="bottom" id="6KQ-e7-88c"/>
+                <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="l5x-Bw-stp" secondAttribute="trailing" id="9l9-UC-pRM"/>
+                <constraint firstItem="l5x-Bw-stp" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" id="ecZ-6d-xFa"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="Q5M-cg-NOt"/>
+            <point key="canvasLocation" x="137.68115942028987" y="83.705357142857139"/>
+        </view>
+    </objects>
+</document>

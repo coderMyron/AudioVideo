@@ -14,6 +14,19 @@
 		A143F375235B5936006180EC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A143F374235B5936006180EC /* Assets.xcassets */; };
 		A143F378235B5936006180EC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A143F376235B5936006180EC /* LaunchScreen.storyboard */; };
 		A143F37B235B5936006180EC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A143F37A235B5936006180EC /* main.m */; };
+		A143F383235B5C40006180EC /* SoundTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A143F382235B5C40006180EC /* SoundTableViewController.m */; };
+		A143F387235B5FEC006180EC /* SoundEffectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A143F385235B5FEC006180EC /* SoundEffectViewController.m */; };
+		A143F388235B5FEC006180EC /* SoundEffectViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A143F386235B5FEC006180EC /* SoundEffectViewController.xib */; };
+		A143F38A235B60B2006180EC /* sound1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A143F389235B60B1006180EC /* sound1.mp3 */; };
+		A1824D34235BFDBE004D8C52 /* AVAudioPlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A1824D32235BFDBE004D8C52 /* AVAudioPlayerViewController.m */; };
+		A1824D35235BFDBE004D8C52 /* AVAudioPlayerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1824D33235BFDBE004D8C52 /* AVAudioPlayerViewController.xib */; };
+		A1824D37235C03CB004D8C52 /* 朴树 - 平凡之路.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A1824D36235C03CB004D8C52 /* 朴树 - 平凡之路.mp3 */; };
+		A1824D39235C1DBB004D8C52 /* offline.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A1824D38235C1DBB004D8C52 /* offline.jpg */; };
+		A1824D3C235C1EE7004D8C52 /* MediaInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = A1824D3B235C1EE7004D8C52 /* MediaInfo.m */; };
+		A1824D3F235C2B1B004D8C52 /* SoundEffectTools.m in Sources */ = {isa = PBXBuildFile; fileRef = A1824D3E235C2B1B004D8C52 /* SoundEffectTools.m */; };
+		A1824D42235C2EAA004D8C52 /* MyAVAudioPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = A1824D41235C2EAA004D8C52 /* MyAVAudioPlayer.m */; };
+		A1824D44235C4ACD004D8C52 /* 赵雷 - 我们的时光.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A1824D43235C4ACD004D8C52 /* 赵雷 - 我们的时光.mp3 */; };
+		A1824D46235C4B5B004D8C52 /* zaolei.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A1824D45235C4B5B004D8C52 /* zaolei.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +42,26 @@
 		A143F377235B5936006180EC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A143F379235B5936006180EC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A143F37A235B5936006180EC /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		A143F381235B5C40006180EC /* SoundTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SoundTableViewController.h; sourceTree = "<group>"; };
+		A143F382235B5C40006180EC /* SoundTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SoundTableViewController.m; sourceTree = "<group>"; };
+		A143F384235B5FEC006180EC /* SoundEffectViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SoundEffectViewController.h; sourceTree = "<group>"; };
+		A143F385235B5FEC006180EC /* SoundEffectViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SoundEffectViewController.m; sourceTree = "<group>"; };
+		A143F386235B5FEC006180EC /* SoundEffectViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SoundEffectViewController.xib; sourceTree = "<group>"; };
+		A143F389235B60B1006180EC /* sound1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = sound1.mp3; sourceTree = "<group>"; };
+		A1824D31235BFDBE004D8C52 /* AVAudioPlayerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AVAudioPlayerViewController.h; sourceTree = "<group>"; };
+		A1824D32235BFDBE004D8C52 /* AVAudioPlayerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AVAudioPlayerViewController.m; sourceTree = "<group>"; };
+		A1824D33235BFDBE004D8C52 /* AVAudioPlayerViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AVAudioPlayerViewController.xib; sourceTree = "<group>"; };
+		A1824D36235C03CB004D8C52 /* 朴树 - 平凡之路.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "朴树 - 平凡之路.mp3"; sourceTree = "<group>"; };
+		A1824D38235C1DBB004D8C52 /* offline.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = offline.jpg; sourceTree = "<group>"; };
+		A1824D3A235C1EE7004D8C52 /* MediaInfo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MediaInfo.h; sourceTree = "<group>"; };
+		A1824D3B235C1EE7004D8C52 /* MediaInfo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MediaInfo.m; sourceTree = "<group>"; };
+		A1824D3D235C2B1B004D8C52 /* SoundEffectTools.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SoundEffectTools.h; sourceTree = "<group>"; };
+		A1824D3E235C2B1B004D8C52 /* SoundEffectTools.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SoundEffectTools.m; sourceTree = "<group>"; };
+		A1824D40235C2EAA004D8C52 /* MyAVAudioPlayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyAVAudioPlayer.h; sourceTree = "<group>"; };
+		A1824D41235C2EAA004D8C52 /* MyAVAudioPlayer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyAVAudioPlayer.m; sourceTree = "<group>"; };
+		A1824D43235C4ACD004D8C52 /* 赵雷 - 我们的时光.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "赵雷 - 我们的时光.mp3"; sourceTree = "<group>"; };
+		A1824D45235C4B5B004D8C52 /* zaolei.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = zaolei.jpg; sourceTree = "<group>"; };
+		A1824D47235C560C004D8C52 /* AudioVideo-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AudioVideo-Prefix.pch"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +105,26 @@
 				A143F376235B5936006180EC /* LaunchScreen.storyboard */,
 				A143F379235B5936006180EC /* Info.plist */,
 				A143F37A235B5936006180EC /* main.m */,
+				A143F381235B5C40006180EC /* SoundTableViewController.h */,
+				A143F382235B5C40006180EC /* SoundTableViewController.m */,
+				A143F389235B60B1006180EC /* sound1.mp3 */,
+				A1824D36235C03CB004D8C52 /* 朴树 - 平凡之路.mp3 */,
+				A1824D45235C4B5B004D8C52 /* zaolei.jpg */,
+				A1824D43235C4ACD004D8C52 /* 赵雷 - 我们的时光.mp3 */,
+				A1824D38235C1DBB004D8C52 /* offline.jpg */,
+				A143F384235B5FEC006180EC /* SoundEffectViewController.h */,
+				A143F385235B5FEC006180EC /* SoundEffectViewController.m */,
+				A143F386235B5FEC006180EC /* SoundEffectViewController.xib */,
+				A1824D31235BFDBE004D8C52 /* AVAudioPlayerViewController.h */,
+				A1824D32235BFDBE004D8C52 /* AVAudioPlayerViewController.m */,
+				A1824D33235BFDBE004D8C52 /* AVAudioPlayerViewController.xib */,
+				A1824D3A235C1EE7004D8C52 /* MediaInfo.h */,
+				A1824D3B235C1EE7004D8C52 /* MediaInfo.m */,
+				A1824D3D235C2B1B004D8C52 /* SoundEffectTools.h */,
+				A1824D3E235C2B1B004D8C52 /* SoundEffectTools.m */,
+				A1824D40235C2EAA004D8C52 /* MyAVAudioPlayer.h */,
+				A1824D41235C2EAA004D8C52 /* MyAVAudioPlayer.m */,
+				A1824D47235C560C004D8C52 /* AudioVideo-Prefix.pch */,
 			);
 			path = AudioVideo;
 			sourceTree = "<group>";
@@ -133,9 +186,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A143F38A235B60B2006180EC /* sound1.mp3 in Resources */,
+				A1824D35235BFDBE004D8C52 /* AVAudioPlayerViewController.xib in Resources */,
 				A143F378235B5936006180EC /* LaunchScreen.storyboard in Resources */,
+				A1824D39235C1DBB004D8C52 /* offline.jpg in Resources */,
+				A1824D37235C03CB004D8C52 /* 朴树 - 平凡之路.mp3 in Resources */,
 				A143F375235B5936006180EC /* Assets.xcassets in Resources */,
+				A1824D44235C4ACD004D8C52 /* 赵雷 - 我们的时光.mp3 in Resources */,
+				A1824D46235C4B5B004D8C52 /* zaolei.jpg in Resources */,
 				A143F373235B5935006180EC /* Main.storyboard in Resources */,
+				A143F388235B5FEC006180EC /* SoundEffectViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -147,8 +207,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				A143F370235B5935006180EC /* ViewController.m in Sources */,
+				A143F387235B5FEC006180EC /* SoundEffectViewController.m in Sources */,
+				A1824D42235C2EAA004D8C52 /* MyAVAudioPlayer.m in Sources */,
+				A1824D3F235C2B1B004D8C52 /* SoundEffectTools.m in Sources */,
+				A1824D3C235C1EE7004D8C52 /* MediaInfo.m in Sources */,
 				A143F36A235B5935006180EC /* AppDelegate.m in Sources */,
 				A143F37B235B5936006180EC /* main.m in Sources */,
+				A1824D34235BFDBE004D8C52 /* AVAudioPlayerViewController.m in Sources */,
+				A143F383235B5C40006180EC /* SoundTableViewController.m in Sources */,
 				A143F36D235B5935006180EC /* SceneDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -291,6 +357,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = KGB4YH8FC6;
+				GCC_PREFIX_HEADER = "AudioVideo/AudioVideo-Prefix.pch";
 				INFOPLIST_FILE = AudioVideo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -308,6 +375,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = KGB4YH8FC6;
+				GCC_PREFIX_HEADER = "AudioVideo/AudioVideo-Prefix.pch";
 				INFOPLIST_FILE = AudioVideo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
