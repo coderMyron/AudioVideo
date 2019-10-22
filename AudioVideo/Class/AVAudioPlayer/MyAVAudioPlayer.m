@@ -5,10 +5,13 @@
 //  Created by Myron on 2019/10/20.
 //  Copyright © 2019 Myron. All rights reserved.
 //
+/**
+ AVAudioPlayer是通过一个文件路径来加载，AVAudioPlayer一次只能播放一个音频文件，所有上一曲、下一曲其实可以通过创建多个播放器对象来完成。AVAudioPlayer不支持加载网络媒体流，只能播放本地文件
+ */
 
 #import "MyAVAudioPlayer.h"
 
-@interface MyAVAudioPlayer ()
+@interface MyAVAudioPlayer ()<AVAudioPlayerDelegate>
 
 @property (weak ,nonatomic) NSTimer *timer;//进度更新定时器
 
@@ -106,6 +109,7 @@ static NSMutableDictionary *cacheDict;
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(routeChange:) name:AVAudioSessionRouteChangeNotification object:nil];
     }else{
         self.player = cachPlayer;
+        self.player.delegate=self;
         if (![self.player isPlaying]) {
             [self.player play];
 //            self.player.fireDate=[NSDate distantPast];//恢复定时器
@@ -166,6 +170,13 @@ static NSMutableDictionary *cacheDict;
 {
     NSLog(@"player dealloc");
     [[NSNotificationCenter defaultCenter] removeObserver:self name:AVAudioSessionRouteChangeNotification object:nil];
+}
+
+#pragma mark - 播放器代理方法
+- (void)audioPlayerDidFinishPlaying:(AVAudioPlayer *)player successfully:(BOOL)flag{
+    NSLog(@"audioPlayerDidFinishPlaying 音乐播放完成...");
+    //根据实际情况播放完成可以将会话关闭，其他音频应用继续播放
+    [[AVAudioSession sharedInstance]setActive:NO error:nil];
 }
 
 @end

@@ -32,8 +32,10 @@ void soundCompleteCallback(SystemSoundID soundID,void * clientData){
 }
 - (IBAction)playSound:(id)sender {
     
-//    [self playSoundEffect:@"sound1.mp3"];
     [SoundEffectTools playSoundWithName:@"sound1.mp3" alert:NO];
+}
+- (IBAction)playSound2:(UIButton *)sender {
+        [self playSoundEffect:@"sound1.mp3"];
 }
 
 - (void)didReceiveMemoryWarning{

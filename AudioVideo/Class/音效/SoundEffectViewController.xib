@@ -25,6 +25,14 @@
                         <action selector="playSound:" destination="-1" eventType="touchUpInside" id="aIQ-wt-dYm"/>
                     </connections>
                 </button>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lDa-dc-HEb">
+                    <rect key="frame" x="172" y="330" width="71" height="30"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <state key="normal" title="播放音效2"/>
+                    <connections>
+                        <action selector="playSound2:" destination="-1" eventType="touchUpInside" id="mGM-to-1wh"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <viewLayoutGuide key="safeArea" id="Q5M-cg-NOt"/>

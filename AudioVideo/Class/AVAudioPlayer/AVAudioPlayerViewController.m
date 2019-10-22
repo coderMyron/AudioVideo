@@ -13,7 +13,7 @@
 #import "MyAVAudioPlayer.h"
 
 
-@interface AVAudioPlayerViewController ()<AVAudioPlayerDelegate,MyAVAudioPlayerDelegate>
+@interface AVAudioPlayerViewController ()<MyAVAudioPlayerDelegate>
 
 @property (nonatomic,strong) AVAudioPlayer *audioPlayer;//播放器
 @property (weak, nonatomic) IBOutlet UIProgressView *playProgress;//播放进度
@@ -170,13 +170,6 @@ switch (order) {
     default:
         break;
     }
-}
-
-#pragma mark - 播放器代理方法
--(void)audioPlayerDidFinishPlaying:(AVAudioPlayer *)player successfully:(BOOL)flag{
-    NSLog(@"音乐播放完成...");
-    //根据实际情况播放完成可以将会话关闭，其他音频应用继续播放
-    [[AVAudioSession sharedInstance]setActive:NO error:nil];
 }
 
 #pragma mark - MyAVAudioPlayerDelegate

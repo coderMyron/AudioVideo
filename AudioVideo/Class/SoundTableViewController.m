@@ -9,6 +9,7 @@
 #import "SoundTableViewController.h"
 #import "SoundEffectViewController.h"
 #import "AVAudioPlayerViewController.h"
+#import "MusicPlayerViewController.h"
 
 @interface SoundTableViewController ()
 
@@ -53,7 +54,7 @@
         SoundEffectViewController *soundEffectVC = [[SoundEffectViewController alloc] init];
         [self.navigationController pushViewController:soundEffectVC animated:YES];
     }else if(indexPath.row == 1){
-        AVAudioPlayerViewController *soundEffectVC = [[AVAudioPlayerViewController alloc] init];
+        AVAudioPlayerViewController *vc = [[AVAudioPlayerViewController alloc] init];
         MediaInfo *mediainfo = [[MediaInfo alloc] init];
         mediainfo = [[MediaInfo alloc] init];
         mediainfo.musicName = @"平凡之路";
@@ -61,10 +62,10 @@
         mediainfo.artwork = @"showpic";
         mediainfo.albumTitle = @"树神";
         mediainfo.musicFile = @"朴树 - 平凡之路.mp3";
-        [soundEffectVC setMediaInfo:mediainfo];
-        [self.navigationController pushViewController:soundEffectVC animated:YES];
+        [vc setMediaInfo:mediainfo];
+        [self.navigationController pushViewController:vc animated:YES];
     }else if(indexPath.row == 2){
-        AVAudioPlayerViewController *soundEffectVC = [[AVAudioPlayerViewController alloc] init];
+        AVAudioPlayerViewController *vc = [[AVAudioPlayerViewController alloc] init];
         MediaInfo *mediainfo = [[MediaInfo alloc] init];
         mediainfo = [[MediaInfo alloc] init];
         mediainfo.musicName = @"我们的时光";
@@ -72,8 +73,11 @@
         mediainfo.artwork = @"zaolei.jpg";
         mediainfo.albumTitle = @"雷神";
         mediainfo.musicFile = @"赵雷 - 我们的时光.mp3";
-        [soundEffectVC setMediaInfo:mediainfo];
-        [self.navigationController pushViewController:soundEffectVC animated:YES];
+        [vc setMediaInfo:mediainfo];
+        [self.navigationController pushViewController:vc animated:YES];
+    }else if(indexPath.row == 3){
+        MusicPlayerViewController *vc = [[MusicPlayerViewController alloc] init];
+        [self.navigationController pushViewController:vc animated:YES];
     }
 }
 
