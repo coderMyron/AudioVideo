@@ -29,6 +29,8 @@
 		A1824D87235C5D77004D8C52 /* AVAudioPlayerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1824D75235C5D77004D8C52 /* AVAudioPlayerViewController.xib */; };
 		A1824D88235C5D77004D8C52 /* MediaInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = A1824D76235C5D77004D8C52 /* MediaInfo.m */; };
 		A1824D89235C5D77004D8C52 /* AVAudioPlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A1824D77235C5D77004D8C52 /* AVAudioPlayerViewController.m */; };
+		A1BB8E192361E3F500F243DC /* AVAudioRecorderVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A1BB8E172361E3F500F243DC /* AVAudioRecorderVC.m */; };
+		A1BB8E1A2361E3F500F243DC /* AVAudioRecorderVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1BB8E182361E3F500F243DC /* AVAudioRecorderVC.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -67,6 +69,9 @@
 		A1824D78235C5D77004D8C52 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		A1824D79235C5D77004D8C52 /* SceneDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
 		A1824D8A235C5E04004D8C52 /* AudioVideo-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AudioVideo-Prefix.pch"; sourceTree = "<group>"; };
+		A1BB8E162361E3F500F243DC /* AVAudioRecorderVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AVAudioRecorderVC.h; sourceTree = "<group>"; };
+		A1BB8E172361E3F500F243DC /* AVAudioRecorderVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AVAudioRecorderVC.m; sourceTree = "<group>"; };
+		A1BB8E182361E3F500F243DC /* AVAudioRecorderVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AVAudioRecorderVC.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +118,7 @@
 		A1824D5D235C5D77004D8C52 /* Class */ = {
 			isa = PBXGroup;
 			children = (
+				A1BB8E152361E38B00F243DC /* AVAudioRecorder */,
 				A186E9C2235F3DBC00422F15 /* MusicPlayer */,
 				A1824D5E235C5D77004D8C52 /* zaolei.jpg */,
 				A1824D5F235C5D77004D8C52 /* 朴树 - 平凡之路.mp3 */,
@@ -167,6 +173,16 @@
 				A106D2EC235F50F900557E26 /* MusicPlayerVC.xib */,
 			);
 			path = MusicPlayer;
+			sourceTree = "<group>";
+		};
+		A1BB8E152361E38B00F243DC /* AVAudioRecorder */ = {
+			isa = PBXGroup;
+			children = (
+				A1BB8E162361E3F500F243DC /* AVAudioRecorderVC.h */,
+				A1BB8E172361E3F500F243DC /* AVAudioRecorderVC.m */,
+				A1BB8E182361E3F500F243DC /* AVAudioRecorderVC.xib */,
+			);
+			path = AVAudioRecorder;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -236,6 +252,7 @@
 				A1824D81235C5D77004D8C52 /* 赵雷 - 我们的时光.mp3 in Resources */,
 				A1824D87235C5D77004D8C52 /* AVAudioPlayerViewController.xib in Resources */,
 				A1824D7B235C5D77004D8C52 /* 朴树 - 平凡之路.mp3 in Resources */,
+				A1BB8E1A2361E3F500F243DC /* AVAudioRecorderVC.xib in Resources */,
 				A1824D7F235C5D77004D8C52 /* offline.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -257,6 +274,7 @@
 				A1824D7C235C5D77004D8C52 /* SoundTableViewController.m in Sources */,
 				A1824D89235C5D77004D8C52 /* AVAudioPlayerViewController.m in Sources */,
 				A1824D7E235C5D77004D8C52 /* SceneDelegate.m in Sources */,
+				A1BB8E192361E3F500F243DC /* AVAudioRecorderVC.m in Sources */,
 				A1824D85235C5D77004D8C52 /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

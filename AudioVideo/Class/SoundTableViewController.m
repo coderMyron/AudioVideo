@@ -10,6 +10,7 @@
 #import "SoundEffectViewController.h"
 #import "AVAudioPlayerViewController.h"
 #import "MusicPlayerViewController.h"
+#import "AVAudioRecorderVC.h"
 
 @interface SoundTableViewController ()
 
@@ -79,6 +80,9 @@
 //        MusicPlayerViewController *vc = [[MusicPlayerViewController alloc] init];
 //        MusicPlayerViewController *vc = [[MusicPlayerViewController alloc] initWithNibName:@"MusicPlayerVC" bundle:nil];
         MusicPlayerViewController *vc = [[MusicPlayerViewController alloc] initWithNibName:@"MusicPlayerVC" bundle:nil];
+        [self.navigationController pushViewController:vc animated:YES];
+    }else if(indexPath.row == 4){
+        AVAudioRecorderVC *vc = [[AVAudioRecorderVC alloc] init];
         [self.navigationController pushViewController:vc animated:YES];
     }
 }
