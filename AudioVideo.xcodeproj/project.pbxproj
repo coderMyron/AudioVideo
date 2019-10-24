@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		A106D2EB235F4ADC00557E26 /* MusicPlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A106D2EA235F4ADC00557E26 /* MusicPlayerViewController.m */; };
+		A106D2ED235F50F900557E26 /* MusicPlayerVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = A106D2EC235F50F900557E26 /* MusicPlayerVC.xib */; };
 		A143F373235B5935006180EC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A143F371235B5935006180EC /* Main.storyboard */; };
 		A143F375235B5936006180EC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A143F374235B5936006180EC /* Assets.xcassets */; };
 		A143F378235B5936006180EC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A143F376235B5936006180EC /* LaunchScreen.storyboard */; };
@@ -33,6 +34,7 @@
 /* Begin PBXFileReference section */
 		A106D2E9235F4ADC00557E26 /* MusicPlayerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MusicPlayerViewController.h; sourceTree = "<group>"; };
 		A106D2EA235F4ADC00557E26 /* MusicPlayerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MusicPlayerViewController.m; sourceTree = "<group>"; };
+		A106D2EC235F50F900557E26 /* MusicPlayerVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MusicPlayerVC.xib; sourceTree = "<group>"; };
 		A143F365235B5935006180EC /* AudioVideo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AudioVideo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A143F372235B5935006180EC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A143F374235B5936006180EC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -162,6 +164,7 @@
 			children = (
 				A106D2E9235F4ADC00557E26 /* MusicPlayerViewController.h */,
 				A106D2EA235F4ADC00557E26 /* MusicPlayerViewController.m */,
+				A106D2EC235F50F900557E26 /* MusicPlayerVC.xib */,
 			);
 			path = MusicPlayer;
 			sourceTree = "<group>";
@@ -226,6 +229,7 @@
 				A1824D83235C5D77004D8C52 /* sound1.mp3 in Resources */,
 				A1824D80235C5D77004D8C52 /* SoundEffectViewController.xib in Resources */,
 				A143F378235B5936006180EC /* LaunchScreen.storyboard in Resources */,
+				A106D2ED235F50F900557E26 /* MusicPlayerVC.xib in Resources */,
 				A1824D7A235C5D77004D8C52 /* zaolei.jpg in Resources */,
 				A143F375235B5936006180EC /* Assets.xcassets in Resources */,
 				A143F373235B5935006180EC /* Main.storyboard in Resources */,
