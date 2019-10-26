@@ -7,6 +7,8 @@
 //
 /**
  AVAudioPlayer是通过一个文件路径来加载，AVAudioPlayer一次只能播放一个音频文件，所有上一曲、下一曲其实可以通过创建多个播放器对象来完成。AVAudioPlayer不支持加载网络媒体流，只能播放本地文件
+ 
+ 设置后台运行模式：在plist文件中添加Required background modes，并且设置item 0=App plays audio or streams audio/video using AirPlay（可以直接通过Xcode在Project Targets-Capabilities-Background Modes中设置）
  */
 
 #import "MyAVAudioPlayer.h"
