@@ -9,6 +9,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AVPlayerVC">
             <connections>
+                <outlet property="container" destination="XJQ-nI-94O" id="8kP-T4-Avh"/>
+                <outlet property="playOrPause" destination="VHQ-Kl-Rxv" id="F7G-HG-NvW"/>
                 <outlet property="view" destination="3Nd-KB-hYv" id="2C3-Gp-QhU"/>
             </connections>
         </placeholder>
@@ -16,7 +18,57 @@
         <view contentMode="scaleToFill" id="3Nd-KB-hYv">
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VHQ-Kl-Rxv">
+                    <rect key="frame" x="20" y="284" width="31" height="30"/>
+                    <state key="normal" title="播放"/>
+                    <connections>
+                        <action selector="playClick:" destination="-1" eventType="touchUpInside" id="cHr-Sz-qzh"/>
+                    </connections>
+                </button>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XJQ-nI-94O">
+                    <rect key="frame" x="20" y="64" width="374" height="200"/>
+                    <color key="backgroundColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="200" id="qyg-fg-n8a"/>
+                    </constraints>
+                </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tms-0N-Cix">
+                    <rect key="frame" x="81" y="284" width="30" height="30"/>
+                    <state key="normal" title="1"/>
+                    <connections>
+                        <action selector="navigationButtonClick:" destination="-1" eventType="touchUpInside" id="wpD-zP-NyU"/>
+                    </connections>
+                </button>
+                <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dN5-m9-1dj">
+                    <rect key="frame" x="131" y="284" width="30" height="30"/>
+                    <state key="normal" title="2"/>
+                    <connections>
+                        <action selector="navigationButtonClick:" destination="-1" eventType="touchUpInside" id="D4B-Px-z8Q"/>
+                    </connections>
+                </button>
+                <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Jf-go-rw2">
+                    <rect key="frame" x="181" y="284" width="30" height="30"/>
+                    <state key="normal" title="3"/>
+                    <connections>
+                        <action selector="navigationButtonClick:" destination="-1" eventType="touchUpInside" id="h76-cC-BSx"/>
+                    </connections>
+                </button>
+            </subviews>
             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+            <constraints>
+                <constraint firstItem="dN5-m9-1dj" firstAttribute="centerY" secondItem="tms-0N-Cix" secondAttribute="centerY" id="3SX-hh-hk9"/>
+                <constraint firstItem="VHQ-Kl-Rxv" firstAttribute="leading" secondItem="FM1-us-y4I" secondAttribute="leading" constant="20" id="3gL-cH-fQZ"/>
+                <constraint firstItem="dN5-m9-1dj" firstAttribute="leading" secondItem="tms-0N-Cix" secondAttribute="trailing" constant="20" id="97T-vR-YAr"/>
+                <constraint firstItem="0Jf-go-rw2" firstAttribute="centerY" secondItem="dN5-m9-1dj" secondAttribute="centerY" id="ABz-CD-VNC"/>
+                <constraint firstItem="tms-0N-Cix" firstAttribute="centerY" secondItem="VHQ-Kl-Rxv" secondAttribute="centerY" id="DAG-a3-sde"/>
+                <constraint firstItem="tms-0N-Cix" firstAttribute="leading" secondItem="VHQ-Kl-Rxv" secondAttribute="trailing" constant="30" id="GfC-0F-S7D"/>
+                <constraint firstItem="FM1-us-y4I" firstAttribute="trailing" secondItem="XJQ-nI-94O" secondAttribute="trailing" constant="20" id="TdU-gb-zby"/>
+                <constraint firstItem="VHQ-Kl-Rxv" firstAttribute="top" secondItem="XJQ-nI-94O" secondAttribute="bottom" constant="20" id="Zrk-c6-2y5"/>
+                <constraint firstItem="XJQ-nI-94O" firstAttribute="top" secondItem="FM1-us-y4I" secondAttribute="top" constant="20" id="cOL-Qy-Nv3"/>
+                <constraint firstItem="XJQ-nI-94O" firstAttribute="leading" secondItem="FM1-us-y4I" secondAttribute="leading" constant="20" id="rI4-0z-zd2"/>
+                <constraint firstItem="0Jf-go-rw2" firstAttribute="leading" secondItem="dN5-m9-1dj" secondAttribute="trailing" constant="20" id="zq5-4k-Eum"/>
+            </constraints>
             <viewLayoutGuide key="safeArea" id="FM1-us-y4I"/>
             <point key="canvasLocation" x="122" y="50"/>
         </view>
