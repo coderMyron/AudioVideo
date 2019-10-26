@@ -5,6 +5,9 @@
 //  Created by Myron on 2019/10/22.
 //  Copyright © 2019 Myron. All rights reserved.
 //
+/**
+ MPMusicPlayerController用于播放音乐库中的音乐
+ */
 
 #import "MusicPlayerViewController.h"
 #import <MediaPlayer/MediaPlayer.h>
