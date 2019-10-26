@@ -7,12 +7,31 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A10068E0236337C000FE7EFB /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = A10068BD236337C000FE7EFB /* Reachability.m */; };
+		A10068E1236337C000FE7EFB /* FSParseRssPodcastFeedRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = A10068BE236337C000FE7EFB /* FSParseRssPodcastFeedRequest.m */; };
+		A10068E2236337C000FE7EFB /* http_stream.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A10068C0236337C000FE7EFB /* http_stream.cpp */; };
+		A10068E3236337C000FE7EFB /* FSPlaylistItem.m in Sources */ = {isa = PBXBuildFile; fileRef = A10068C1236337C000FE7EFB /* FSPlaylistItem.m */; };
+		A10068E4236337C000FE7EFB /* audio_stream.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A10068C2236337C000FE7EFB /* audio_stream.cpp */; };
+		A10068E5236337C000FE7EFB /* id3_parser.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A10068C4236337C000FE7EFB /* id3_parser.cpp */; };
+		A10068E6236337C000FE7EFB /* FSCheckContentTypeRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = A10068C5236337C000FE7EFB /* FSCheckContentTypeRequest.m */; };
+		A10068E7236337C000FE7EFB /* stream_configuration.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A10068C6236337C000FE7EFB /* stream_configuration.cpp */; };
+		A10068E8236337C000FE7EFB /* input_stream.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A10068C8236337C000FE7EFB /* input_stream.cpp */; };
+		A10068E9236337C000FE7EFB /* FSAudioController.m in Sources */ = {isa = PBXBuildFile; fileRef = A10068CB236337C000FE7EFB /* FSAudioController.m */; };
+		A10068EA236337C000FE7EFB /* file_output.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A10068CC236337C000FE7EFB /* file_output.cpp */; };
+		A10068EB236337C000FE7EFB /* caching_stream.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A10068CD236337C000FE7EFB /* caching_stream.cpp */; };
+		A10068EC236337C000FE7EFB /* FSXMLHttpRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = A10068D1236337C000FE7EFB /* FSXMLHttpRequest.m */; };
+		A10068ED236337C000FE7EFB /* FSAudioStream.mm in Sources */ = {isa = PBXBuildFile; fileRef = A10068D4236337C000FE7EFB /* FSAudioStream.mm */; };
+		A10068EE236337C000FE7EFB /* audio_queue.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A10068D6236337C000FE7EFB /* audio_queue.cpp */; };
+		A10068EF236337C000FE7EFB /* file_stream.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A10068D8236337C000FE7EFB /* file_stream.cpp */; };
+		A10068F0236337C000FE7EFB /* FSParsePlaylistRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = A10068D9236337C000FE7EFB /* FSParsePlaylistRequest.m */; };
+		A10068F72363383200FE7EFB /* libxml2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = A10068F3236337EE00FE7EFB /* libxml2.tbd */; };
 		A106D2EB235F4ADC00557E26 /* MusicPlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A106D2EA235F4ADC00557E26 /* MusicPlayerViewController.m */; };
 		A106D2ED235F50F900557E26 /* MusicPlayerVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = A106D2EC235F50F900557E26 /* MusicPlayerVC.xib */; };
 		A143F373235B5935006180EC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A143F371235B5935006180EC /* Main.storyboard */; };
 		A143F375235B5936006180EC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A143F374235B5936006180EC /* Assets.xcassets */; };
 		A143F378235B5936006180EC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A143F376235B5936006180EC /* LaunchScreen.storyboard */; };
 		A143F37B235B5936006180EC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A143F37A235B5936006180EC /* main.m */; };
+		A14CFBA82363FD9400E5E92C /* FreeStreamerUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = A14CFBA72363FD9400E5E92C /* FreeStreamerUtils.m */; };
 		A1824D7A235C5D77004D8C52 /* zaolei.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A1824D5E235C5D77004D8C52 /* zaolei.jpg */; };
 		A1824D7B235C5D77004D8C52 /* 朴树 - 平凡之路.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A1824D5F235C5D77004D8C52 /* 朴树 - 平凡之路.mp3 */; };
 		A1824D7C235C5D77004D8C52 /* SoundTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A1824D61235C5D77004D8C52 /* SoundTableViewController.m */; };
@@ -29,11 +48,51 @@
 		A1824D87235C5D77004D8C52 /* AVAudioPlayerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1824D75235C5D77004D8C52 /* AVAudioPlayerViewController.xib */; };
 		A1824D88235C5D77004D8C52 /* MediaInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = A1824D76235C5D77004D8C52 /* MediaInfo.m */; };
 		A1824D89235C5D77004D8C52 /* AVAudioPlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A1824D77235C5D77004D8C52 /* AVAudioPlayerViewController.m */; };
+		A182CCEA236335F0009579BB /* FreeStreamerVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A182CCE8236335F0009579BB /* FreeStreamerVC.m */; };
+		A182CCEB236335F0009579BB /* FreeStreamerVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = A182CCE9236335F0009579BB /* FreeStreamerVC.xib */; };
 		A1BB8E192361E3F500F243DC /* AVAudioRecorderVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A1BB8E172361E3F500F243DC /* AVAudioRecorderVC.m */; };
 		A1BB8E1A2361E3F500F243DC /* AVAudioRecorderVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1BB8E182361E3F500F243DC /* AVAudioRecorderVC.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A10068BC236337C000FE7EFB /* audio_queue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = audio_queue.h; sourceTree = "<group>"; };
+		A10068BD236337C000FE7EFB /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
+		A10068BE236337C000FE7EFB /* FSParseRssPodcastFeedRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSParseRssPodcastFeedRequest.m; sourceTree = "<group>"; };
+		A10068BF236337C000FE7EFB /* FSXMLHttpRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSXMLHttpRequest.h; sourceTree = "<group>"; };
+		A10068C0236337C000FE7EFB /* http_stream.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = http_stream.cpp; sourceTree = "<group>"; };
+		A10068C1236337C000FE7EFB /* FSPlaylistItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSPlaylistItem.m; sourceTree = "<group>"; };
+		A10068C2236337C000FE7EFB /* audio_stream.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = audio_stream.cpp; sourceTree = "<group>"; };
+		A10068C3236337C000FE7EFB /* FSParsePlaylistRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSParsePlaylistRequest.h; sourceTree = "<group>"; };
+		A10068C4236337C000FE7EFB /* id3_parser.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = id3_parser.cpp; sourceTree = "<group>"; };
+		A10068C5236337C000FE7EFB /* FSCheckContentTypeRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSCheckContentTypeRequest.m; sourceTree = "<group>"; };
+		A10068C6236337C000FE7EFB /* stream_configuration.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = stream_configuration.cpp; sourceTree = "<group>"; };
+		A10068C7236337C000FE7EFB /* file_stream.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = file_stream.h; sourceTree = "<group>"; };
+		A10068C8236337C000FE7EFB /* input_stream.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = input_stream.cpp; sourceTree = "<group>"; };
+		A10068C9236337C000FE7EFB /* input_stream.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = input_stream.h; sourceTree = "<group>"; };
+		A10068CA236337C000FE7EFB /* file_output.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = file_output.h; sourceTree = "<group>"; };
+		A10068CB236337C000FE7EFB /* FSAudioController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSAudioController.m; sourceTree = "<group>"; };
+		A10068CC236337C000FE7EFB /* file_output.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = file_output.cpp; sourceTree = "<group>"; };
+		A10068CD236337C000FE7EFB /* caching_stream.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = caching_stream.cpp; sourceTree = "<group>"; };
+		A10068CE236337C000FE7EFB /* audio_stream.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = audio_stream.h; sourceTree = "<group>"; };
+		A10068CF236337C000FE7EFB /* http_stream.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = http_stream.h; sourceTree = "<group>"; };
+		A10068D0236337C000FE7EFB /* FSPlaylistItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSPlaylistItem.h; sourceTree = "<group>"; };
+		A10068D1236337C000FE7EFB /* FSXMLHttpRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSXMLHttpRequest.m; sourceTree = "<group>"; };
+		A10068D2236337C000FE7EFB /* FSParseRssPodcastFeedRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSParseRssPodcastFeedRequest.h; sourceTree = "<group>"; };
+		A10068D3236337C000FE7EFB /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
+		A10068D4236337C000FE7EFB /* FSAudioStream.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = FSAudioStream.mm; sourceTree = "<group>"; };
+		A10068D5236337C000FE7EFB /* id3_parser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = id3_parser.h; sourceTree = "<group>"; };
+		A10068D6236337C000FE7EFB /* audio_queue.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = audio_queue.cpp; sourceTree = "<group>"; };
+		A10068D7236337C000FE7EFB /* FSCheckContentTypeRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSCheckContentTypeRequest.h; sourceTree = "<group>"; };
+		A10068D8236337C000FE7EFB /* file_stream.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = file_stream.cpp; sourceTree = "<group>"; };
+		A10068D9236337C000FE7EFB /* FSParsePlaylistRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSParsePlaylistRequest.m; sourceTree = "<group>"; };
+		A10068DA236337C000FE7EFB /* FSAudioStream.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSAudioStream.h; sourceTree = "<group>"; };
+		A10068DB236337C000FE7EFB /* FreeStreamer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FreeStreamer.h; sourceTree = "<group>"; };
+		A10068DC236337C000FE7EFB /* FSAudioController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSAudioController.h; sourceTree = "<group>"; };
+		A10068DD236337C000FE7EFB /* stream_configuration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = stream_configuration.h; sourceTree = "<group>"; };
+		A10068DE236337C000FE7EFB /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A10068DF236337C000FE7EFB /* caching_stream.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = caching_stream.h; sourceTree = "<group>"; };
+		A10068F3236337EE00FE7EFB /* libxml2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libxml2.tbd; path = usr/lib/libxml2.tbd; sourceTree = SDKROOT; };
+		A10068F52363382300FE7EFB /* libxml2.2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libxml2.2.tbd; path = usr/lib/libxml2.2.tbd; sourceTree = SDKROOT; };
 		A106D2E9235F4ADC00557E26 /* MusicPlayerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MusicPlayerViewController.h; sourceTree = "<group>"; };
 		A106D2EA235F4ADC00557E26 /* MusicPlayerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MusicPlayerViewController.m; sourceTree = "<group>"; };
 		A106D2EC235F50F900557E26 /* MusicPlayerVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MusicPlayerVC.xib; sourceTree = "<group>"; };
@@ -43,6 +102,8 @@
 		A143F377235B5936006180EC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A143F379235B5936006180EC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A143F37A235B5936006180EC /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		A14CFBA62363FD9400E5E92C /* FreeStreamerUtils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FreeStreamerUtils.h; sourceTree = "<group>"; };
+		A14CFBA72363FD9400E5E92C /* FreeStreamerUtils.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FreeStreamerUtils.m; sourceTree = "<group>"; };
 		A1824D5E235C5D77004D8C52 /* zaolei.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = zaolei.jpg; sourceTree = "<group>"; };
 		A1824D5F235C5D77004D8C52 /* 朴树 - 平凡之路.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "朴树 - 平凡之路.mp3"; sourceTree = "<group>"; };
 		A1824D60235C5D77004D8C52 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -69,6 +130,9 @@
 		A1824D78235C5D77004D8C52 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		A1824D79235C5D77004D8C52 /* SceneDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
 		A1824D8A235C5E04004D8C52 /* AudioVideo-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AudioVideo-Prefix.pch"; sourceTree = "<group>"; };
+		A182CCE7236335F0009579BB /* FreeStreamerVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FreeStreamerVC.h; sourceTree = "<group>"; };
+		A182CCE8236335F0009579BB /* FreeStreamerVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FreeStreamerVC.m; sourceTree = "<group>"; };
+		A182CCE9236335F0009579BB /* FreeStreamerVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FreeStreamerVC.xib; sourceTree = "<group>"; };
 		A1BB8E162361E3F500F243DC /* AVAudioRecorderVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AVAudioRecorderVC.h; sourceTree = "<group>"; };
 		A1BB8E172361E3F500F243DC /* AVAudioRecorderVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AVAudioRecorderVC.m; sourceTree = "<group>"; };
 		A1BB8E182361E3F500F243DC /* AVAudioRecorderVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AVAudioRecorderVC.xib; sourceTree = "<group>"; };
@@ -79,17 +143,71 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A10068F72363383200FE7EFB /* libxml2.tbd in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A10068BB236337C000FE7EFB /* FreeStreamer */ = {
+			isa = PBXGroup;
+			children = (
+				A10068BC236337C000FE7EFB /* audio_queue.h */,
+				A10068BD236337C000FE7EFB /* Reachability.m */,
+				A10068BE236337C000FE7EFB /* FSParseRssPodcastFeedRequest.m */,
+				A10068BF236337C000FE7EFB /* FSXMLHttpRequest.h */,
+				A10068C0236337C000FE7EFB /* http_stream.cpp */,
+				A10068C1236337C000FE7EFB /* FSPlaylistItem.m */,
+				A10068C2236337C000FE7EFB /* audio_stream.cpp */,
+				A10068C3236337C000FE7EFB /* FSParsePlaylistRequest.h */,
+				A10068C4236337C000FE7EFB /* id3_parser.cpp */,
+				A10068C5236337C000FE7EFB /* FSCheckContentTypeRequest.m */,
+				A10068C6236337C000FE7EFB /* stream_configuration.cpp */,
+				A10068C7236337C000FE7EFB /* file_stream.h */,
+				A10068C8236337C000FE7EFB /* input_stream.cpp */,
+				A10068C9236337C000FE7EFB /* input_stream.h */,
+				A10068CA236337C000FE7EFB /* file_output.h */,
+				A10068CB236337C000FE7EFB /* FSAudioController.m */,
+				A10068CC236337C000FE7EFB /* file_output.cpp */,
+				A10068CD236337C000FE7EFB /* caching_stream.cpp */,
+				A10068CE236337C000FE7EFB /* audio_stream.h */,
+				A10068CF236337C000FE7EFB /* http_stream.h */,
+				A10068D0236337C000FE7EFB /* FSPlaylistItem.h */,
+				A10068D1236337C000FE7EFB /* FSXMLHttpRequest.m */,
+				A10068D2236337C000FE7EFB /* FSParseRssPodcastFeedRequest.h */,
+				A10068D3236337C000FE7EFB /* Reachability.h */,
+				A10068D4236337C000FE7EFB /* FSAudioStream.mm */,
+				A10068D5236337C000FE7EFB /* id3_parser.h */,
+				A10068D6236337C000FE7EFB /* audio_queue.cpp */,
+				A10068D7236337C000FE7EFB /* FSCheckContentTypeRequest.h */,
+				A10068D8236337C000FE7EFB /* file_stream.cpp */,
+				A10068D9236337C000FE7EFB /* FSParsePlaylistRequest.m */,
+				A10068DA236337C000FE7EFB /* FSAudioStream.h */,
+				A10068DB236337C000FE7EFB /* FreeStreamer.h */,
+				A10068DC236337C000FE7EFB /* FSAudioController.h */,
+				A10068DD236337C000FE7EFB /* stream_configuration.h */,
+				A10068DE236337C000FE7EFB /* Info.plist */,
+				A10068DF236337C000FE7EFB /* caching_stream.h */,
+			);
+			path = FreeStreamer;
+			sourceTree = "<group>";
+		};
+		A10068F2236337EE00FE7EFB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A10068F52363382300FE7EFB /* libxml2.2.tbd */,
+				A10068F3236337EE00FE7EFB /* libxml2.tbd */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		A143F35C235B5935006180EC = {
 			isa = PBXGroup;
 			children = (
 				A143F367235B5935006180EC /* AudioVideo */,
 				A143F366235B5935006180EC /* Products */,
+				A10068F2236337EE00FE7EFB /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -118,6 +236,7 @@
 		A1824D5D235C5D77004D8C52 /* Class */ = {
 			isa = PBXGroup;
 			children = (
+				A182CCE6236335B0009579BB /* FreeStreamer */,
 				A1BB8E152361E38B00F243DC /* AVAudioRecorder */,
 				A186E9C2235F3DBC00422F15 /* MusicPlayer */,
 				A1824D5E235C5D77004D8C52 /* zaolei.jpg */,
@@ -163,6 +282,19 @@
 				A1824D75235C5D77004D8C52 /* AVAudioPlayerViewController.xib */,
 			);
 			path = AVAudioPlayer;
+			sourceTree = "<group>";
+		};
+		A182CCE6236335B0009579BB /* FreeStreamer */ = {
+			isa = PBXGroup;
+			children = (
+				A182CCE7236335F0009579BB /* FreeStreamerVC.h */,
+				A182CCE8236335F0009579BB /* FreeStreamerVC.m */,
+				A182CCE9236335F0009579BB /* FreeStreamerVC.xib */,
+				A14CFBA62363FD9400E5E92C /* FreeStreamerUtils.h */,
+				A14CFBA72363FD9400E5E92C /* FreeStreamerUtils.m */,
+				A10068BB236337C000FE7EFB /* FreeStreamer */,
+			);
+			path = FreeStreamer;
 			sourceTree = "<group>";
 		};
 		A186E9C2235F3DBC00422F15 /* MusicPlayer */ = {
@@ -248,6 +380,7 @@
 				A106D2ED235F50F900557E26 /* MusicPlayerVC.xib in Resources */,
 				A1824D7A235C5D77004D8C52 /* zaolei.jpg in Resources */,
 				A143F375235B5936006180EC /* Assets.xcassets in Resources */,
+				A182CCEB236335F0009579BB /* FreeStreamerVC.xib in Resources */,
 				A143F373235B5935006180EC /* Main.storyboard in Resources */,
 				A1824D81235C5D77004D8C52 /* 赵雷 - 我们的时光.mp3 in Resources */,
 				A1824D87235C5D77004D8C52 /* AVAudioPlayerViewController.xib in Resources */,
@@ -264,17 +397,36 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A10068EA236337C000FE7EFB /* file_output.cpp in Sources */,
 				A1824D86235C5D77004D8C52 /* MyAVAudioPlayer.m in Sources */,
 				A1824D7D235C5D77004D8C52 /* ViewController.m in Sources */,
+				A10068EB236337C000FE7EFB /* caching_stream.cpp in Sources */,
 				A1824D88235C5D77004D8C52 /* MediaInfo.m in Sources */,
+				A182CCEA236335F0009579BB /* FreeStreamerVC.m in Sources */,
+				A10068F0236337C000FE7EFB /* FSParsePlaylistRequest.m in Sources */,
+				A10068E4236337C000FE7EFB /* audio_stream.cpp in Sources */,
+				A10068E1236337C000FE7EFB /* FSParseRssPodcastFeedRequest.m in Sources */,
+				A10068E9236337C000FE7EFB /* FSAudioController.m in Sources */,
+				A10068E8236337C000FE7EFB /* input_stream.cpp in Sources */,
 				A143F37B235B5936006180EC /* main.m in Sources */,
 				A106D2EB235F4ADC00557E26 /* MusicPlayerViewController.m in Sources */,
+				A10068E7236337C000FE7EFB /* stream_configuration.cpp in Sources */,
 				A1824D84235C5D77004D8C52 /* SoundEffectTools.m in Sources */,
+				A10068E5236337C000FE7EFB /* id3_parser.cpp in Sources */,
 				A1824D82235C5D77004D8C52 /* SoundEffectViewController.m in Sources */,
+				A10068EC236337C000FE7EFB /* FSXMLHttpRequest.m in Sources */,
 				A1824D7C235C5D77004D8C52 /* SoundTableViewController.m in Sources */,
+				A10068EE236337C000FE7EFB /* audio_queue.cpp in Sources */,
 				A1824D89235C5D77004D8C52 /* AVAudioPlayerViewController.m in Sources */,
+				A10068ED236337C000FE7EFB /* FSAudioStream.mm in Sources */,
+				A10068E2236337C000FE7EFB /* http_stream.cpp in Sources */,
+				A10068E0236337C000FE7EFB /* Reachability.m in Sources */,
+				A10068E6236337C000FE7EFB /* FSCheckContentTypeRequest.m in Sources */,
 				A1824D7E235C5D77004D8C52 /* SceneDelegate.m in Sources */,
 				A1BB8E192361E3F500F243DC /* AVAudioRecorderVC.m in Sources */,
+				A10068EF236337C000FE7EFB /* file_stream.cpp in Sources */,
+				A14CFBA82363FD9400E5E92C /* FreeStreamerUtils.m in Sources */,
+				A10068E3236337C000FE7EFB /* FSPlaylistItem.m in Sources */,
 				A1824D85235C5D77004D8C52 /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -418,6 +570,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = KGB4YH8FC6;
 				GCC_PREFIX_HEADER = "AudioVideo/AudioVideo-Prefix.pch";
+				HEADER_SEARCH_PATHS = "$(SDKROOT)/usr/include/libxml2";
 				INFOPLIST_FILE = AudioVideo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -436,6 +589,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = KGB4YH8FC6;
 				GCC_PREFIX_HEADER = "AudioVideo/AudioVideo-Prefix.pch";
+				HEADER_SEARCH_PATHS = "$(SDKROOT)/usr/include/libxml2";
 				INFOPLIST_FILE = AudioVideo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

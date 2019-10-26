@@ -140,10 +140,23 @@
  *  录音声波状态设置
  */
 -(void)audioPowerChange{
+    NSLog(@"audioPowerChange");
     [self.audioRecorder updateMeters];//更新测量值
     float power= [self.audioRecorder averagePowerForChannel:0];//取得第一个通道的音频，注意音频强度范围时-160到0
     CGFloat progress=(1.0/160.0)*(power+160.0);
     [self.audioPower setProgress:progress];
+}
+
+- (void)viewWillDisappear:(BOOL)animated{
+    if (self.timer.isValid) {
+        [self.timer invalidate];
+        self.timer = nil;
+    }
+}
+
+- (void)dealloc
+{
+    NSLog(@"dealloc");
 }
 
 #pragma mark - UI事件

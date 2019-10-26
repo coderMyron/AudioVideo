@@ -11,6 +11,7 @@
 #import "AVAudioPlayerViewController.h"
 #import "MusicPlayerViewController.h"
 #import "AVAudioRecorderVC.h"
+#import "FreeStreamerVC.h"
 
 @interface SoundTableViewController ()
 
@@ -21,34 +22,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
 #pragma mark - Table view data source
 
-//- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-//#warning Incomplete implementation, return the number of sections
-//    return 1;
-//}
-//
-//- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-//#warning Incomplete implementation, return the number of rows
-//    return 5;
-//}
-//
-//
-//- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-//    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cellID" forIndexPath:indexPath];
-//
-//    // Configure the cell...
-//
-//    return cell;
-//}
-//
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     if (indexPath.row == 0) {
@@ -83,6 +60,9 @@
         [self.navigationController pushViewController:vc animated:YES];
     }else if(indexPath.row == 4){
         AVAudioRecorderVC *vc = [[AVAudioRecorderVC alloc] init];
+        [self.navigationController pushViewController:vc animated:YES];
+    }else if(indexPath.row == 5){
+        FreeStreamerVC *vc = [[FreeStreamerVC alloc] init];
         [self.navigationController pushViewController:vc animated:YES];
     }
 }

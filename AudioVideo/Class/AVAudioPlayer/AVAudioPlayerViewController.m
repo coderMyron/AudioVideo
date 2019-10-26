@@ -107,6 +107,8 @@
 }
 
 -(void)dealloc{
+    NSLog(@"dealloc");
+
 //    [[NSNotificationCenter defaultCenter] removeObserver:self name:AVAudioSessionRouteChangeNotification object:nil];
     [[NSNotificationCenter defaultCenter] removeObserver:self name:kAppDidReceiveRemoteControlNotification object:nil];
 }
@@ -176,5 +178,6 @@ switch (order) {
 - (void)updateProgress:(MyAVAudioPlayer *)player withProgress:(CGFloat)progress{
     [self.playProgress setProgress:progress animated:true];
 }
+
 
 @end
