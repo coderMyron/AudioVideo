@@ -6,9 +6,11 @@
 //  Copyright © 2019 Myron. All rights reserved.
 //
 /**
+ AVPlayer可以播放视频，也可以播放音频，本地网络都可以播放
  AVPlayer没有是否正在播放的状态属性，通常情况下可以通过判断播放器的播放速度来获得播放状态。如果rate为0说明是停止状态，1是则是正常播放状态。
  在播放视频时，特别是播放网络视频往往需要知道视频加载情况、缓冲情况、播放情况，这些信息可以通过KVO监控AVPlayerItem的status、loadedTimeRanges属性来获得
  当AVPlayerItem的status属性为AVPlayerStatusReadyToPlay是说明正在播放，只有处于这个状态时才能获得视频时长等信息；当loadedTimeRanges的改变时（每缓冲一部分数据就会更新此属性）可以获得本次缓冲加载的视频范围（包含起始时间、本次加载时长），这样一来就可以实时获得缓冲情况
+ 
  */
 #import "AVPlayerVC.h"
 #import <AVFoundation/AVFoundation.h>
