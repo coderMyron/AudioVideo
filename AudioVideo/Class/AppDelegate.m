@@ -12,6 +12,8 @@
 
 @interface AppDelegate ()
 
+@property(nonatomic,assign) UIBackgroundTaskIdentifier bgTaskId;
+
 @end
 
 @implementation AppDelegate
@@ -21,6 +23,8 @@
     // Override point for customization after application launch.
     
     NSLog(@"didFinishLaunchingWithOptions");
+    
+        
     /**
     想要接收播放控制消息，我们必须要做三件事：
     1成为Frist Responder
@@ -36,14 +40,29 @@
     return YES;
 }
 
-//-(void)applicationWillResignActive:(UIApplication *)application
-//{
-//    NSLog(@"applicationWillResignActive");
+//注意taskId
+- (UIBackgroundTaskIdentifier)backgroudPlayId:(UIBackgroundTaskIdentifier)taskId{
+    //设置后台任务ID
+    UIBackgroundTaskIdentifier newTaskId = UIBackgroundTaskInvalid;
+    newTaskId = [[UIApplication sharedApplication] beginBackgroundTaskWithExpirationHandler:nil];
+    if (newTaskId != UIBackgroundTaskInvalid && taskId != UIBackgroundTaskInvalid) {
+        [[UIApplication sharedApplication] endBackgroundTask:taskId];
+    }
+    return newTaskId;
+}
+
+-(void)applicationWillResignActive:(UIApplication *)application
+{
+    NSLog(@"applicationWillResignActive");
 //    AVAudioSession *session=[AVAudioSession sharedInstance];
 //    [session setActive:YES error:nil];
 //    //后台播放
 //    [session setCategory:AVAudioSessionCategoryPlayback error:nil];
-//}
+    
+    //注册后台播放,注册后台taskId
+    self.bgTaskId = [self backgroudPlayId:self.bgTaskId];
+
+}
 
 - (void)remoteControlReceivedWithEvent:(UIEvent *)event{
     NSLog(@"remoteControlReceivedWithEvent %ld",event.subtype);
