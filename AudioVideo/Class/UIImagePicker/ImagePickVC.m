@@ -22,6 +22,7 @@
 @property (strong,nonatomic) UIImagePickerController *imagePicker;
 @property (weak, nonatomic) IBOutlet UIImageView *photo; //照片展示视图
 @property (strong,nonatomic) AVPlayer *player; //播放器，用于录制完视频后播放视频
+@property(nonatomic,assign) BOOL takeVideoing;
 
 @end
 
@@ -108,8 +109,62 @@
         }
         _imagePicker.allowsEditing = YES;//允许编辑
         _imagePicker.delegate = self;//设置代理，检测操作
+        UIView *view = [[UIView alloc] init];
+        view.backgroundColor = [UIColor redColor];
+        CGSize size = [UIScreen mainScreen].bounds.size;
+        view.frame =CGRectMake(0, 0, size.width, 100);
+        //自定义取消
+        UIButton *cancel = [UIButton buttonWithType:UIButtonTypeCustom];
+        cancel.frame = CGRectMake(10, 10, 80, 40);
+        [cancel setTitle:@"取消" forState:UIControlStateNormal];
+        [cancel setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+        [cancel addTarget:self action:@selector(cancelImagePicker) forControlEvents:UIControlEventTouchUpInside];
+        [view addSubview:cancel];
+        //定义义拍照
+        UIButton *takePhoto = [UIButton buttonWithType:UIButtonTypeCustom];
+        takePhoto.frame = CGRectMake(100, 10, 80, 40);
+        [takePhoto setTitle:@"拍照" forState:UIControlStateNormal];
+        [takePhoto setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+        [takePhoto addTarget:self action:@selector(takePhoto) forControlEvents:UIControlEventTouchUpInside];
+        [view addSubview:takePhoto];
+        //定义义录视频
+        UIButton *takeVideo = [UIButton buttonWithType:UIButtonTypeCustom];
+        takeVideo.frame = CGRectMake(180, 10, 80, 40);
+        [takeVideo setTitle:@"录视频" forState:UIControlStateNormal];
+        [takeVideo setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+        [takeVideo addTarget:self action:@selector(takeVideo) forControlEvents:UIControlEventTouchUpInside];
+        [view addSubview:takeVideo];
+
+        //摄像头上覆盖的视图，可用通过这个视频来自定义拍照或录像界面
+        _imagePicker.cameraOverlayView = view;
+        //是否显示摄像头控制面板，默认为YES
+        //_imagePicker.showsCameraControls = NO;
+        //闪光灯模式 UIImagePickerControllerCameraFlashModeOn
+        _imagePicker.cameraFlashMode = UIImagePickerControllerCameraFlashModeAuto;
     }
     return _imagePicker;
+}
+
+-(void)cancelImagePicker{
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+-(void)takePhoto{
+    [self.imagePicker takePicture];
+    NSLog(@"拍照");
+}
+
+-(void)takeVideo{
+    if (!self.takeVideoing) {
+        NSLog(@"开始录视频");
+        self.takeVideoing = YES;
+        [self.imagePicker startVideoCapture];
+    }else{
+        NSLog(@"结束录视频");
+        self.takeVideoing = NO;
+        [self.imagePicker stopVideoCapture];
+    }
+    
 }
  
 //视频保存后的回调
