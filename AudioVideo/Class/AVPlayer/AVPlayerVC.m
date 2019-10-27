@@ -19,6 +19,7 @@
 @property (weak, nonatomic) IBOutlet UIView *container; //播放器容器
 @property (weak, nonatomic) IBOutlet UIButton *playOrPause; //播放/暂停按钮
 @property (weak, nonatomic) IBOutlet UIProgressView *progress; //播放进度
+@property(nonatomic,strong) id timeObserve;;
 
 @end
 
@@ -34,6 +35,7 @@
 }
 
 -(void)dealloc{
+    NSLog(@"dealloc");
     [self removeObserverFromPlayerItem:self.player.currentItem];
     [self removeNotification];
 }
@@ -61,6 +63,7 @@
         _player=[AVPlayer playerWithPlayerItem:playerItem];
         [self addProgressObserver];
         [self addObserverToPlayerItem:playerItem];
+        [self addNotification];
     }
     return _player;
 }
@@ -84,11 +87,6 @@
     urlStr =[urlStr stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
     //播放网络
     NSURL *url=[NSURL URLWithString:urlStr];
-    if (videoIndex == 2) {
-        urlStr=[[NSBundle mainBundle] pathForResource:@"test4.mp4" ofType:nil];
-        //播放本地
-        url = [NSURL fileURLWithPath:urlStr];
-    }
     AVPlayerItem *playerItem=[AVPlayerItem playerItemWithURL:url];
     return playerItem;
 }
@@ -112,6 +110,8 @@
  */
 -(void)playbackFinished:(NSNotification *)notification{
     NSLog(@"视频播放完成.");
+    //播放完成后移除观察者
+    [self removeObserverFromPlayerItem:self.player.currentItem];
 }
  
 #pragma mark - 监控
@@ -121,11 +121,12 @@
 -(void)addProgressObserver{
     AVPlayerItem *playerItem=self.player.currentItem;
     UIProgressView *progress=self.progress;
-    //这里设置每秒执行一次
-    [self.player addPeriodicTimeObserverForInterval:CMTimeMake(1.0, 1.0) queue:dispatch_get_main_queue() usingBlock:^(CMTime time) {
+    //添加观察者 这里设置每秒执行一次
+    self.timeObserve = [self.player addPeriodicTimeObserverForInterval:CMTimeMake(1.0, 1.0) queue:dispatch_get_main_queue() usingBlock:^(CMTime time) {
         float current=CMTimeGetSeconds(time);
         float total=CMTimeGetSeconds([playerItem duration]);
-        NSLog(@"当前已经播放%.2fs.",current);
+        //NSLog(@"当前已经播放%.2fs.",current);
+        //NSLog(@"total %.2fs.",total);
         if (current) {
             [progress setProgress:(current/total) animated:YES];
         }
@@ -144,8 +145,12 @@
     [playerItem addObserver:self forKeyPath:@"loadedTimeRanges" options:NSKeyValueObservingOptionNew context:nil];
 }
 -(void)removeObserverFromPlayerItem:(AVPlayerItem *)playerItem{
-    [playerItem removeObserver:self forKeyPath:@"status"];
-    [playerItem removeObserver:self forKeyPath:@"loadedTimeRanges"];
+    if (self.timeObserve) {
+        [self.player removeTimeObserver:self.timeObserve];//移除观察者
+        self.timeObserve = nil;
+        [playerItem removeObserver:self forKeyPath:@"status"];
+        [playerItem removeObserver:self forKeyPath:@"loadedTimeRanges"];
+    }
 }
 
 /**
@@ -159,6 +164,21 @@
 -(void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context{
     AVPlayerItem *playerItem=object;
     if ([keyPath isEqualToString:@"status"]) {
+        switch (self.player.status) {
+            case AVPlayerStatusUnknown:
+                NSLog(@"KVO：未知状态，此时不能播放");
+                break;
+            case AVPlayerStatusReadyToPlay:
+//                self.status = SUPlayStatusReadyToPlay;
+                NSLog(@"KVO：准备完毕，可以播放");
+                break;
+            case AVPlayerStatusFailed:
+                NSLog(@"KVO：加载失败，网络或者服务器出现问题");
+                break;
+            default:
+                break;
+        }
+        NSLog(@"%@",change);
         AVPlayerStatus status= [[change objectForKey:@"new"] intValue];
         if(status==AVPlayerStatusReadyToPlay){
             NSLog(@"正在播放...，视频总长度:%.2f",CMTimeGetSeconds(playerItem.duration));
@@ -181,8 +201,6 @@
  *  @param sender 播放/暂停按钮
  */
 - (IBAction)playClick:(UIButton *)sender {
-//    AVPlayerItemDidPlayToEndTimeNotification
-    AVPlayerItem *playerItem= self.player.currentItem;
     if(self.player.rate==0){ //说明时暂停
 //        [sender setImage:[UIImage imageNamed:@"player_pause"] forState:UIControlStateNormal];
         [sender setTitle:@"暂停" forState:UIControlStateNormal];
@@ -207,6 +225,30 @@
     //切换视频
     [self.player replaceCurrentItemWithPlayerItem:playerItem];
     [self addNotification];
+    [self addProgressObserver];
+    if(self.player.rate==0){ //切换时暂停自动播放
+        [self.playOrPause setTitle:@"暂停" forState:UIControlStateNormal];
+        [self.player play];
+    }
+}
+
+- (IBAction)playLocal:(UIButton *)sender {
+    [self removeNotification];
+    [self removeObserverFromPlayerItem:self.player.currentItem];
+    //播放本地
+    NSString *urlStr=[[NSBundle mainBundle] pathForResource:@"test4.mp4" ofType:nil];
+    NSURL *url = [NSURL fileURLWithPath:urlStr];
+    AVPlayerItem *playerItem=[AVPlayerItem playerItemWithURL:url];
+    [self addObserverToPlayerItem:playerItem];
+    //切换视频
+    [self.player replaceCurrentItemWithPlayerItem:playerItem];
+    [self addNotification];
+    [self addProgressObserver];
+    if(self.player.rate==0){ //切换时暂停自动播放
+        [self.playOrPause setTitle:@"暂停" forState:UIControlStateNormal];
+        [self.player play];
+    }
+
 }
 
 @end
