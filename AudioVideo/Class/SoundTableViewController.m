@@ -14,6 +14,7 @@
 #import "FreeStreamerVC.h"
 #import "AVPlayerVC.h"
 #import "AVAssetImageVC.h"
+#import "ImagePickVC.h"
 
 @interface SoundTableViewController ()
 
@@ -87,6 +88,11 @@
         }
         case 7:{
             AVAssetImageVC *vc = [[AVAssetImageVC alloc] init];
+            [self.navigationController pushViewController:vc animated:YES];
+            break;
+        }
+        case 8:{
+            ImagePickVC *vc = [[ImagePickVC alloc] init];
             [self.navigationController pushViewController:vc animated:YES];
             break;
         }

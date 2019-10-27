@@ -32,6 +32,8 @@
 		A143F375235B5936006180EC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A143F374235B5936006180EC /* Assets.xcassets */; };
 		A143F378235B5936006180EC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A143F376235B5936006180EC /* LaunchScreen.storyboard */; };
 		A143F37B235B5936006180EC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A143F37A235B5936006180EC /* main.m */; };
+		A14A642423659467001102A0 /* ImagePickVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A14A642223659467001102A0 /* ImagePickVC.m */; };
+		A14A642523659467001102A0 /* ImagePickVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = A14A642323659467001102A0 /* ImagePickVC.xib */; };
 		A14CFBA82363FD9400E5E92C /* FreeStreamerUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = A14CFBA72363FD9400E5E92C /* FreeStreamerUtils.m */; };
 		A14CFBAC23642C7400E5E92C /* MPMoviePlayerVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A14CFBAB23642C7400E5E92C /* MPMoviePlayerVC.m */; };
 		A14CFBAE23642C9500E5E92C /* MPMoviePlayerVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = A14CFBAD23642C9500E5E92C /* MPMoviePlayerVC.xib */; };
@@ -110,6 +112,9 @@
 		A143F377235B5936006180EC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A143F379235B5936006180EC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A143F37A235B5936006180EC /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		A14A642123659467001102A0 /* ImagePickVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ImagePickVC.h; sourceTree = "<group>"; };
+		A14A642223659467001102A0 /* ImagePickVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ImagePickVC.m; sourceTree = "<group>"; };
+		A14A642323659467001102A0 /* ImagePickVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImagePickVC.xib; sourceTree = "<group>"; };
 		A14CFBA62363FD9400E5E92C /* FreeStreamerUtils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FreeStreamerUtils.h; sourceTree = "<group>"; };
 		A14CFBA72363FD9400E5E92C /* FreeStreamerUtils.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FreeStreamerUtils.m; sourceTree = "<group>"; };
 		A14CFBAA23642C7400E5E92C /* MPMoviePlayerVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MPMoviePlayerVC.h; sourceTree = "<group>"; };
@@ -250,6 +255,16 @@
 			path = AudioVideo;
 			sourceTree = "<group>";
 		};
+		A14A64202365943B001102A0 /* UIImagePicker */ = {
+			isa = PBXGroup;
+			children = (
+				A14A642123659467001102A0 /* ImagePickVC.h */,
+				A14A642223659467001102A0 /* ImagePickVC.m */,
+				A14A642323659467001102A0 /* ImagePickVC.xib */,
+			);
+			path = UIImagePicker;
+			sourceTree = "<group>";
+		};
 		A14CFBA923642C0C00E5E92C /* MPMoviePlayerController */ = {
 			isa = PBXGroup;
 			children = (
@@ -273,6 +288,7 @@
 		A1824D5D235C5D77004D8C52 /* Class */ = {
 			isa = PBXGroup;
 			children = (
+				A14A64202365943B001102A0 /* UIImagePicker */,
 				A1E0B740236476FD005E3AE3 /* AVAssetImageGenerator  */,
 				A14CFBAF23643C5600E5E92C /* AVPlayer */,
 				A14CFBA923642C0C00E5E92C /* MPMoviePlayerController */,
@@ -430,6 +446,7 @@
 				A143F378235B5936006180EC /* LaunchScreen.storyboard in Resources */,
 				A106D2ED235F50F900557E26 /* MusicPlayerVC.xib in Resources */,
 				A1824D7A235C5D77004D8C52 /* zaolei.jpg in Resources */,
+				A14A642523659467001102A0 /* ImagePickVC.xib in Resources */,
 				A143F375235B5936006180EC /* Assets.xcassets in Resources */,
 				A11CFFFC2364803F007288D4 /* test4.mp4 in Resources */,
 				A1E0B745236477C1005E3AE3 /* AVAssetImageVC.xib in Resources */,
@@ -466,6 +483,7 @@
 				A10068E8236337C000FE7EFB /* input_stream.cpp in Sources */,
 				A143F37B235B5936006180EC /* main.m in Sources */,
 				A106D2EB235F4ADC00557E26 /* MusicPlayerViewController.m in Sources */,
+				A14A642423659467001102A0 /* ImagePickVC.m in Sources */,
 				A1E0B74323647784005E3AE3 /* AVAssetImageVC.m in Sources */,
 				A10068E7236337C000FE7EFB /* stream_configuration.cpp in Sources */,
 				A1824D84235C5D77004D8C52 /* SoundEffectTools.m in Sources */,
