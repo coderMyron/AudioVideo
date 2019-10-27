@@ -126,7 +126,7 @@
     //专辑缩略图
     [songInfo setObject:albumArt forKey:MPMediaItemPropertyArtwork];
     [songInfo setObject:[NSNumber numberWithDouble:[MyAVAudioPlayer sharedAVAudioPlayer].currentTime ] forKey:MPNowPlayingInfoPropertyElapsedPlaybackTime]; //音乐当前已经播放时间
-    [songInfo setObject:[NSNumber numberWithFloat:1.0] forKey:MPNowPlayingInfoPropertyPlaybackRate];//进度光标的速度 （这个随 自己的播放速率调整，我默认是原速播放）
+    [songInfo setObject:[NSNumber numberWithFloat:1.0] forKey:MPNowPlayingInfoPropertyPlaybackRate];//进度光标的速度 （这个随 自己的播放速率调整，我默认是原速播放）就是1秒刷新一次进度显示
     [songInfo setObject:[NSNumber numberWithDouble:[MyAVAudioPlayer sharedAVAudioPlayer].duration] forKey:MPMediaItemPropertyPlaybackDuration];//歌曲总时间设置
     
     //        设置锁屏状态下屏幕显示音乐信息
