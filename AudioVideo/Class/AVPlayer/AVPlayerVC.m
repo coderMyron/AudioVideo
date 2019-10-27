@@ -125,10 +125,17 @@
     self.timeObserve = [self.player addPeriodicTimeObserverForInterval:CMTimeMake(1.0, 1.0) queue:dispatch_get_main_queue() usingBlock:^(CMTime time) {
         float current=CMTimeGetSeconds(time);
         float total=CMTimeGetSeconds([playerItem duration]);
-        //NSLog(@"当前已经播放%.2fs.",current);
-        //NSLog(@"total %.2fs.",total);
+        NSLog(@"当前已经播放%.2fs.",current);
+        NSLog(@"total %.2fs.",total);
         if (current) {
             [progress setProgress:(current/total) animated:YES];
+        }
+        float rate = floor(current / total * 100)/100;
+        NSLog(@"-- %f",rate);
+        //播放本地音乐没有结束回调，用这个方法
+        if (rate == 1.0f) {
+            NSLog(@"监控播放进度结束");
+            //[self removeObserverFromPlayerItem:self.player.currentItem];
         }
     }];
 }
@@ -249,6 +256,39 @@
         [self.player play];
     }
 
+}
+- (IBAction)playSound:(UIButton *)sender {
+    [self removeNotification];
+    [self removeObserverFromPlayerItem:self.player.currentItem];
+    //播放本地音乐
+    NSString *urlStr=[[NSBundle mainBundle] pathForResource:@"朴树 - 平凡之路.mp3" ofType:nil];
+    NSURL *url = [NSURL fileURLWithPath:urlStr];
+    AVPlayerItem *playerItem=[AVPlayerItem playerItemWithURL:url];
+    [self addObserverToPlayerItem:playerItem];
+    //切换视频
+    [self.player replaceCurrentItemWithPlayerItem:playerItem];
+    [self addNotification];
+    [self addProgressObserver];
+    if(self.player.rate==0){ //切换时暂停自动播放
+        [self.playOrPause setTitle:@"暂停" forState:UIControlStateNormal];
+        [self.player play];
+    }
+}
+- (IBAction)playHttpSound:(UIButton *)sender {
+    [self removeNotification];
+        [self removeObserverFromPlayerItem:self.player.currentItem];
+        //播放网络音乐
+        NSURL *url = [NSURL URLWithString:@"http://music.163.com/song/media/outer/url?id=447925558.mp3"];
+        AVPlayerItem *playerItem=[AVPlayerItem playerItemWithURL:url];
+        [self addObserverToPlayerItem:playerItem];
+        //切换视频
+        [self.player replaceCurrentItemWithPlayerItem:playerItem];
+        [self addNotification];
+        [self addProgressObserver];
+        if(self.player.rate==0){ //切换时暂停自动播放
+            [self.playOrPause setTitle:@"暂停" forState:UIControlStateNormal];
+            [self.player play];
+        }
 }
 
 @end

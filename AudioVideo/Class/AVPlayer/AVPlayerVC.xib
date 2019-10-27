@@ -59,10 +59,24 @@
                     <rect key="frame" x="20" y="334" width="374" height="2"/>
                 </progressView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UWR-vC-w7l">
-                    <rect key="frame" x="231" y="284" width="62" height="30"/>
-                    <state key="normal" title="播放本地"/>
+                    <rect key="frame" x="231" y="284" width="92" height="30"/>
+                    <state key="normal" title="播放本地视频"/>
                     <connections>
                         <action selector="playLocal:" destination="-1" eventType="touchUpInside" id="Kuw-Ma-R0L"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eqT-Ae-RCf">
+                    <rect key="frame" x="20" y="356" width="92" height="30"/>
+                    <state key="normal" title="播放本地音乐"/>
+                    <connections>
+                        <action selector="playSound:" destination="-1" eventType="touchUpInside" id="a5O-dL-nhX"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tR1-ze-lex">
+                    <rect key="frame" x="132" y="356" width="92" height="30"/>
+                    <state key="normal" title="播放网络音乐"/>
+                    <connections>
+                        <action selector="playHttpSound:" destination="-1" eventType="touchUpInside" id="7oR-i2-7Mr"/>
                     </connections>
                 </button>
             </subviews>
@@ -75,13 +89,17 @@
                 <constraint firstItem="0Jf-go-rw2" firstAttribute="centerY" secondItem="dN5-m9-1dj" secondAttribute="centerY" id="ABz-CD-VNC"/>
                 <constraint firstItem="tms-0N-Cix" firstAttribute="centerY" secondItem="VHQ-Kl-Rxv" secondAttribute="centerY" id="DAG-a3-sde"/>
                 <constraint firstAttribute="trailing" secondItem="hwt-QU-NVu" secondAttribute="trailing" constant="20" id="DZk-L6-ohM"/>
+                <constraint firstItem="eqT-Ae-RCf" firstAttribute="leading" secondItem="FM1-us-y4I" secondAttribute="leading" constant="20" id="EQX-fb-50p"/>
                 <constraint firstItem="tms-0N-Cix" firstAttribute="leading" secondItem="VHQ-Kl-Rxv" secondAttribute="trailing" constant="30" id="GfC-0F-S7D"/>
                 <constraint firstItem="hwt-QU-NVu" firstAttribute="leading" secondItem="3Nd-KB-hYv" secondAttribute="leading" constant="20" id="ORU-wh-TFF"/>
                 <constraint firstItem="hwt-QU-NVu" firstAttribute="top" secondItem="tms-0N-Cix" secondAttribute="bottom" constant="20" id="Qos-tF-Esn"/>
                 <constraint firstItem="FM1-us-y4I" firstAttribute="trailing" secondItem="XJQ-nI-94O" secondAttribute="trailing" constant="20" id="TdU-gb-zby"/>
+                <constraint firstItem="tR1-ze-lex" firstAttribute="leading" secondItem="eqT-Ae-RCf" secondAttribute="trailing" constant="20" id="YTa-4d-eVB"/>
                 <constraint firstItem="VHQ-Kl-Rxv" firstAttribute="top" secondItem="XJQ-nI-94O" secondAttribute="bottom" constant="20" id="Zrk-c6-2y5"/>
                 <constraint firstItem="XJQ-nI-94O" firstAttribute="top" secondItem="FM1-us-y4I" secondAttribute="top" constant="20" id="cOL-Qy-Nv3"/>
                 <constraint firstItem="XJQ-nI-94O" firstAttribute="leading" secondItem="FM1-us-y4I" secondAttribute="leading" constant="20" id="rI4-0z-zd2"/>
+                <constraint firstItem="eqT-Ae-RCf" firstAttribute="top" secondItem="hwt-QU-NVu" secondAttribute="bottom" constant="20" id="uCh-xu-JyM"/>
+                <constraint firstItem="tR1-ze-lex" firstAttribute="centerY" secondItem="eqT-Ae-RCf" secondAttribute="centerY" id="uIz-24-Gjw"/>
                 <constraint firstItem="UWR-vC-w7l" firstAttribute="centerY" secondItem="0Jf-go-rw2" secondAttribute="centerY" id="wjA-BH-ddF"/>
                 <constraint firstItem="0Jf-go-rw2" firstAttribute="leading" secondItem="dN5-m9-1dj" secondAttribute="trailing" constant="20" id="zq5-4k-Eum"/>
             </constraints>
