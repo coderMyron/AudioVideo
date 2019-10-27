@@ -20,6 +20,8 @@
 @property (weak, nonatomic) IBOutlet UIButton *playOrPause; //播放/暂停按钮
 @property (weak, nonatomic) IBOutlet UIProgressView *progress; //播放进度
 @property(nonatomic,strong) id timeObserve;;
+@property (weak, nonatomic) IBOutlet UISlider *sliderProgress;
+@property(nonatomic,assign) BOOL isSliderScroll;
 
 @end
 
@@ -32,7 +34,35 @@
     [self.player play];
     [self.playOrPause setTitle:@"暂停" forState:UIControlStateNormal];
 
+    [self.sliderProgress addTarget:self action:@selector(changeProgress:) forControlEvents:UIControlEventValueChanged];
+    [self.sliderProgress addTarget:self action:@selector(changeProgressEnd:) forControlEvents:UIControlEventTouchUpInside];
+    [self.sliderProgress addTarget:self action:@selector(changeProgressStart:) forControlEvents:UIControlEventTouchDown];
+
 }
+
+- (void)changeProgress:(UISlider *)slider{
+    //改变进度显示
+}
+
+- (void)changeProgressStart:(UISlider *)slider{
+    self.isSliderScroll = YES;
+}
+
+- (void)changeProgressEnd:(UISlider *)slider{
+    float value = slider.value;
+    //切换播放到位置
+//    float fps = [[[self.player.currentItem.asset tracksWithMediaType:AVMediaTypeVideo] objectAtIndex:0] nominalFrameRate];
+    float total=CMTimeGetSeconds([self.player.currentItem duration]);
+    CMTime time = CMTimeMakeWithSeconds(total * value, /**fps*/self.player.currentTime.timescale);
+    [self.player seekToTime:time completionHandler:^(BOOL finished) {
+        NSLog(@"切换进度成功");
+        self.isSliderScroll = NO;
+    }];
+    
+    
+//    [self.player seekToTime:time toleranceBefore:CMTimeMake(1, 1000) toleranceAfter:CMTimeMake(1, 1000)];
+}
+
 
 -(void)dealloc{
     NSLog(@"dealloc");
@@ -121,17 +151,23 @@
 -(void)addProgressObserver{
     AVPlayerItem *playerItem=self.player.currentItem;
     UIProgressView *progress=self.progress;
+    __weak typeof(self) weakself = self;
     //添加观察者 这里设置每秒执行一次
     self.timeObserve = [self.player addPeriodicTimeObserverForInterval:CMTimeMake(1.0, 1.0) queue:dispatch_get_main_queue() usingBlock:^(CMTime time) {
         float current=CMTimeGetSeconds(time);
         float total=CMTimeGetSeconds([playerItem duration]);
         NSLog(@"当前已经播放%.2fs.",current);
-        NSLog(@"total %.2fs.",total);
+        //NSLog(@"total %.2fs.",total);
         if (current) {
             [progress setProgress:(current/total) animated:YES];
+            if (!weakself.isSliderScroll) {
+                [weakself.sliderProgress setValue:current/total];
+            }
+            
+            
         }
         float rate = floor(current / total * 100)/100;
-        NSLog(@"-- %f",rate);
+        //NSLog(@"-- %f",rate);
         //播放本地音乐没有结束回调，用这个方法
         if (rate == 1.0f) {
             NSLog(@"监控播放进度结束");
