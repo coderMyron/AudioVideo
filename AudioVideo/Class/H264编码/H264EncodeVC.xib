@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="H264EncodeVC">
+            <connections>
+                <outlet property="flashAutoButton" destination="bUe-9j-12w" id="bpd-JS-qtx"/>
+                <outlet property="flashOffButton" destination="dmZ-8O-hfC" id="uc4-QH-tBk"/>
+                <outlet property="flashOnButton" destination="4fB-fK-pOi" id="kUO-6n-mjC"/>
+                <outlet property="focusCursor" destination="Jok-Pp-TMS" id="Ah2-cK-6Le"/>
+                <outlet property="takeButton" destination="jcU-Ch-bmw" id="3N1-K4-ht9"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outlet property="viewContainer" destination="i5M-Pr-FkT" id="5VT-oV-6gs"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jcU-Ch-bmw">
+                    <rect key="frame" x="191.5" y="792" width="31" height="30"/>
+                    <state key="normal" title="拍照"/>
+                    <connections>
+                        <action selector="takeButtonClick:" destination="-1" eventType="touchUpInside" id="7vk-dn-If7"/>
+                    </connections>
+                </button>
+                <view alpha="0.69999999999999996" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xOP-Vt-5Fb">
+                    <rect key="frame" x="0.0" y="44" width="414" height="50"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bUe-9j-12w">
+                            <rect key="frame" x="10" y="10" width="77" height="30"/>
+                            <state key="normal" title="自动闪光灯">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
+                            <connections>
+                                <action selector="flashAutoClick:" destination="-1" eventType="touchUpInside" id="Bvd-Qd-eJs"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4fB-fK-pOi">
+                            <rect key="frame" x="97" y="10" width="31" height="30"/>
+                            <state key="normal" title="打开">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
+                            <connections>
+                                <action selector="flashOnClick:" destination="-1" eventType="touchUpInside" id="F1h-Oo-XJS"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dmZ-8O-hfC">
+                            <rect key="frame" x="138" y="10" width="31" height="30"/>
+                            <state key="normal" title="关闭">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
+                            <connections>
+                                <action selector="flashOffClick:" destination="-1" eventType="touchUpInside" id="z8U-32-76R"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iP7-Vb-1ZH">
+                            <rect key="frame" x="373" y="10" width="31" height="30"/>
+                            <state key="normal" title="切换">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
+                            <connections>
+                                <action selector="toggleButtonClick:" destination="-1" eventType="touchUpInside" id="Tkn-Cc-bGv"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="dmZ-8O-hfC" firstAttribute="centerY" secondItem="4fB-fK-pOi" secondAttribute="centerY" id="1fK-f6-Sg2"/>
+                        <constraint firstAttribute="trailing" secondItem="iP7-Vb-1ZH" secondAttribute="trailing" constant="10" id="9UA-fC-Jhr"/>
+                        <constraint firstAttribute="height" constant="50" id="Pdx-34-ySO"/>
+                        <constraint firstItem="4fB-fK-pOi" firstAttribute="centerY" secondItem="bUe-9j-12w" secondAttribute="centerY" id="Q42-ep-NDe"/>
+                        <constraint firstItem="4fB-fK-pOi" firstAttribute="leading" secondItem="bUe-9j-12w" secondAttribute="trailing" constant="10" id="XRf-9p-MF7"/>
+                        <constraint firstItem="iP7-Vb-1ZH" firstAttribute="centerY" secondItem="dmZ-8O-hfC" secondAttribute="centerY" id="b6Q-HF-aWu"/>
+                        <constraint firstItem="bUe-9j-12w" firstAttribute="leading" secondItem="xOP-Vt-5Fb" secondAttribute="leading" constant="10" id="fMO-hs-CXe"/>
+                        <constraint firstItem="dmZ-8O-hfC" firstAttribute="leading" secondItem="4fB-fK-pOi" secondAttribute="trailing" constant="10" id="yPc-e5-hsE"/>
+                        <constraint firstItem="bUe-9j-12w" firstAttribute="centerY" secondItem="xOP-Vt-5Fb" secondAttribute="centerY" id="ze3-eh-mZM"/>
+                    </constraints>
+                </view>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="focus" translatesAutoresizingMaskIntoConstraints="NO" id="Jok-Pp-TMS">
+                    <rect key="frame" x="175" y="367" width="64" height="64"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </imageView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="xOP-Vt-5Fb" secondAttribute="trailing" id="Hqh-L6-I2S"/>
+                <constraint firstItem="xOP-Vt-5Fb" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" id="Jvj-dm-H9D"/>
+                <constraint firstItem="xOP-Vt-5Fb" firstAttribute="top" secondItem="Q5M-cg-NOt" secondAttribute="top" id="RFC-FI-wC9"/>
+                <constraint firstItem="jcU-Ch-bmw" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="SaZ-Ls-8ta"/>
+                <constraint firstItem="Q5M-cg-NOt" firstAttribute="bottom" secondItem="jcU-Ch-bmw" secondAttribute="bottom" constant="40" id="TzH-W5-Mb3"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="Q5M-cg-NOt"/>
+            <point key="canvasLocation" x="139" y="128"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="focus" width="64" height="64"/>
+    </resources>
+</document>
