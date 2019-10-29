@@ -87,11 +87,20 @@
                     <rect key="frame" x="175" y="367" width="64" height="64"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 </imageView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wFH-E7-wdx">
+                    <rect key="frame" x="184" y="742" width="46" height="30"/>
+                    <state key="normal" title="录视频"/>
+                    <connections>
+                        <action selector="takeRecord:" destination="-1" eventType="touchUpInside" id="RZW-wn-ae8"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstItem="jcU-Ch-bmw" firstAttribute="top" secondItem="wFH-E7-wdx" secondAttribute="bottom" constant="20" id="BmW-R5-Vs7"/>
                 <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="xOP-Vt-5Fb" secondAttribute="trailing" id="Hqh-L6-I2S"/>
                 <constraint firstItem="xOP-Vt-5Fb" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" id="Jvj-dm-H9D"/>
+                <constraint firstItem="wFH-E7-wdx" firstAttribute="centerX" secondItem="jcU-Ch-bmw" secondAttribute="centerX" id="PAN-r0-VA6"/>
                 <constraint firstItem="xOP-Vt-5Fb" firstAttribute="top" secondItem="Q5M-cg-NOt" secondAttribute="top" id="RFC-FI-wC9"/>
                 <constraint firstItem="jcU-Ch-bmw" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="SaZ-Ls-8ta"/>
                 <constraint firstItem="Q5M-cg-NOt" firstAttribute="bottom" secondItem="jcU-Ch-bmw" secondAttribute="bottom" constant="40" id="TzH-W5-Mb3"/>

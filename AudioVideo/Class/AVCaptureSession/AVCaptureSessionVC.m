@@ -13,7 +13,7 @@
 
 typedef void(^PropertyChangeBlock)(AVCaptureDevice *captureDevice);
 
-@interface AVCaptureSessionVC ()
+@interface AVCaptureSessionVC ()<AVCaptureFileOutputRecordingDelegate>//视频文件输出代理
 
 @property (strong,nonatomic) AVCaptureSession *captureSession; //负责输入和输出设备之间的数据传递
 @property (strong,nonatomic) AVCaptureDeviceInput *captureDeviceInput;//负责从AVCaptureDevice获得输入数据
@@ -25,6 +25,12 @@ typedef void(^PropertyChangeBlock)(AVCaptureDevice *captureDevice);
 @property (weak, nonatomic) IBOutlet UIButton *flashOnButton; //打开闪光灯按钮
 @property (weak, nonatomic) IBOutlet UIButton *flashOffButton; //关闭闪光灯按钮
 @property (weak, nonatomic) IBOutlet UIImageView *focusCursor; //聚焦光标
+//@property(nonatomic,strong) AVCaptureConnection *captureConnection;
+
+@property (strong,nonatomic) AVCaptureMovieFileOutput *captureMovieFileOutput; //视频输出流
+@property (assign,nonatomic) BOOL enableRotation; //是否允许旋转（注意在视频录制过程中禁止屏幕旋转）
+@property (assign,nonatomic) CGRect *lastBounds; //旋转的前大小
+@property (assign,nonatomic) UIBackgroundTaskIdentifier backgroundTaskIdentifier; //后台任务标识
 
 @end
 
@@ -56,8 +62,18 @@ typedef void(^PropertyChangeBlock)(AVCaptureDevice *captureDevice);
         NSLog(@"取得设备输入对象时出错，错误原因：%@",error.localizedDescription);
         return;
     }
+    
+    //添加一个音频输入设备
+    AVCaptureDevice *audioCaptureDevice=[[AVCaptureDevice devicesWithMediaType:AVMediaTypeAudio] firstObject];
+    AVCaptureDeviceInput *audioCaptureDeviceInput=[[AVCaptureDeviceInput alloc]initWithDevice:audioCaptureDevice error:&error];
+    if (error) {
+        NSLog(@"取得设备输入对象时出错，错误原因：%@",error.localizedDescription);
+        return;
+    }
+    //初始化设备输出对象，用于获得输出数据，录视频
+    _captureMovieFileOutput=[[AVCaptureMovieFileOutput alloc]init];
  
-    //初始化设备输出对象，用于获得输出数据
+    //初始化设备输出对象，用于获得输出数据，拍照
     _captureStillImageOutput=[[AVCaptureStillImageOutput alloc]init];
     NSDictionary *outputSettings = @{AVVideoCodecKey:AVVideoCodecJPEG};
     [_captureStillImageOutput setOutputSettings:outputSettings]; //输出设置
@@ -65,12 +81,28 @@ typedef void(^PropertyChangeBlock)(AVCaptureDevice *captureDevice);
     //将设备输入添加到会话中
     if ([_captureSession canAddInput:_captureDeviceInput]) {
         [_captureSession addInput:_captureDeviceInput];
+        //添加音频输入到会话中
+        [_captureSession addInput:audioCaptureDeviceInput];
+        //根据设备输出获得连接
+        AVCaptureConnection *captureConnection=[_captureMovieFileOutput connectionWithMediaType:AVMediaTypeVideo];
+        //防抖
+        if ([captureConnection isVideoStabilizationSupported ]) {
+            captureConnection.preferredVideoStabilizationMode=AVCaptureVideoStabilizationModeAuto;
+        }
+
     }
     
-    //将设备输出添加到会话中
+    
+    //将设备输出添加到会话中，拍照
     if ([_captureSession canAddOutput:_captureStillImageOutput]) {
         [_captureSession addOutput:_captureStillImageOutput];
     }
+    
+    //将设备输出添加到会话中，录视频
+    if ([_captureSession canAddOutput:_captureMovieFileOutput]) {
+        [_captureSession addOutput:_captureMovieFileOutput];
+    }
+
     
     //创建视频预览层，用于实时展示摄像头状态
     _captureVideoPreviewLayer=[[AVCaptureVideoPreviewLayer alloc]initWithSession:self.captureSession];
@@ -88,6 +120,8 @@ typedef void(^PropertyChangeBlock)(AVCaptureDevice *captureDevice);
     [self addNotificationToCaptureDevice:captureDevice];
     [self addGenstureRecognizer];
     [self setFlashModeButtonStatus];
+    
+    _enableRotation=YES;
 }
 
 -(void)viewDidAppear:(BOOL)animated{
@@ -98,6 +132,35 @@ typedef void(^PropertyChangeBlock)(AVCaptureDevice *captureDevice);
 -(void)viewDidDisappear:(BOOL)animated{
     [super viewDidDisappear:animated];
     [self.captureSession stopRunning];
+}
+
+-(BOOL)shouldAutorotate{
+    return self.enableRotation;
+}
+
+//屏幕旋转时调整视频预览图层的方向
+-(void)willTransitionToTraitCollection:(UITraitCollection *)newCollection withTransitionCoordinator:(id<UIViewControllerTransitionCoordinator>)coordinator{
+    [super willTransitionToTraitCollection:newCollection withTransitionCoordinator:coordinator];
+    NSLog(@"willTransitionToTraitCollection");
+    NSLog(@"%li,%li",newCollection.verticalSizeClass,newCollection.horizontalSizeClass);
+    UIInterfaceOrientation orientation = [[UIApplication sharedApplication] statusBarOrientation];
+    NSLog(@"%li",orientation);
+    AVCaptureConnection *captureConnection=[self.captureVideoPreviewLayer connection];
+    captureConnection.videoOrientation=orientation;
+ 
+}
+ 
+//屏幕旋转时调整视频预览图层的方向
+-(void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration{
+    NSLog(@"willRotateToInterfaceOrientation %ld",toInterfaceOrientation);
+    AVCaptureConnection *captureConnection=[self.captureVideoPreviewLayer connection];
+    captureConnection.videoOrientation=(AVCaptureVideoOrientation)toInterfaceOrientation;
+}
+ 
+//旋转后重新设置大小
+-(void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation{
+    NSLog(@"didRotateFromInterfaceOrientation");
+    _captureVideoPreviewLayer.frame=self.viewContainer.bounds;
 }
  
 -(void)dealloc{
@@ -134,7 +197,7 @@ typedef void(^PropertyChangeBlock)(AVCaptureDevice *captureDevice);
                         [[PHPhotoLibrary sharedPhotoLibrary] performChangesAndWait:^{
                             assetID = [PHAssetChangeRequest creationRequestForAssetFromImage:image].placeholderForCreatedAsset.localIdentifier;
                         } error:&error];
-                        if (error != nil) {
+                        if (error == nil) {
                             NSLog(@"拍照成功");
                         }
                     } else if (status == PHAuthorizationStatusRestricted) { // 无法访问相册
@@ -157,6 +220,82 @@ typedef void(^PropertyChangeBlock)(AVCaptureDevice *captureDevice);
         NSLog(@"保存成功");
     }
 
+}
+
+#pragma mark 视频录制
+- (IBAction)takeRecord:(UIButton *)sender {
+    //根据设备输出获得连接
+    AVCaptureConnection *captureConnection=[self.captureMovieFileOutput connectionWithMediaType:AVMediaTypeVideo];
+    //根据连接取得设备输出的数据
+    if (![self.captureMovieFileOutput isRecording]) {
+        self.enableRotation=NO;
+        //如果支持多任务则则开始多任务
+        if ([[UIDevice currentDevice] isMultitaskingSupported]) {
+            self.backgroundTaskIdentifier=[[UIApplication sharedApplication] beginBackgroundTaskWithExpirationHandler:nil];
+        }
+        //预览图层和视频方向保持一致
+        captureConnection.videoOrientation=[self.captureVideoPreviewLayer connection].videoOrientation;
+        NSString *outputFielPath=[NSTemporaryDirectory() stringByAppendingString:@"myMovie.mov"];
+        NSLog(@"save path is :%@",outputFielPath);
+        NSURL *fileUrl=[NSURL fileURLWithPath:outputFielPath];
+        [self.captureMovieFileOutput startRecordingToOutputFileURL:fileUrl recordingDelegate:self];
+    }
+    else{
+        [self.captureMovieFileOutput stopRecording];//停止录制
+    }
+}
+
+#pragma mark - 视频输出代理
+-(void)captureOutput:(AVCaptureFileOutput *)captureOutput didStartRecordingToOutputFileAtURL:(NSURL *)fileURL fromConnections:(NSArray *)connections{
+    NSLog(@"开始录制...");
+}
+ 
+-(void)captureOutput:(AVCaptureFileOutput *)captureOutput didFinishRecordingToOutputFileAtURL:(NSURL *)outputFileURL fromConnections:(NSArray *)connections error:(NSError *)error{
+    NSLog(@"视频录制完成.");
+    //视频录入完成之后在后台将视频存储到相簿
+    self.enableRotation=YES;
+    UIBackgroundTaskIdentifier lastBackgroundTaskIdentifier=self.backgroundTaskIdentifier;
+    self.backgroundTaskIdentifier=UIBackgroundTaskInvalid;
+    
+//    ALAssetsLibrary *assetsLibrary=[[ALAssetsLibrary alloc]init];
+//    [assetsLibrary writeVideoAtPathToSavedPhotosAlbum:outputFileURL completionBlock:^(NSURL *assetURL, NSError *error) {
+//        if (error) {
+//            NSLog(@"保存视频到相簿过程中发生错误，错误信息：%@",error.localizedDescription);
+//        }
+//        if (lastBackgroundTaskIdentifier!=UIBackgroundTaskInvalid) {
+//            [[UIApplication sharedApplication] endBackgroundTask:lastBackgroundTaskIdentifier];
+//        }
+//        NSLog(@"成功保存视频到相簿.");
+//    }];
+    
+    PHAuthorizationStatus oldStatus = [PHPhotoLibrary authorizationStatus];
+    [PHPhotoLibrary requestAuthorization:^(PHAuthorizationStatus status) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            NSLog(@"status %ld",status);
+            if (status == PHAuthorizationStatusDenied) { // 用户拒绝当前App访问相册
+                if (oldStatus != PHAuthorizationStatusNotDetermined) {
+                    NSLog(@"提醒用户打开开关");
+                }
+            } else if (status == PHAuthorizationStatusAuthorized) { // 用户允许当前App访问相册
+                NSError *error = nil;
+                __block NSString *assetID = nil;
+                // 保存图片到【相机胶卷】
+                [[PHPhotoLibrary sharedPhotoLibrary] performChangesAndWait:^{
+                    assetID = [PHAssetChangeRequest creationRequestForAssetFromVideoAtFileURL:outputFileURL].placeholderForCreatedAsset.localIdentifier;
+                    if (lastBackgroundTaskIdentifier!=UIBackgroundTaskInvalid) {
+                        [[UIApplication sharedApplication] endBackgroundTask:lastBackgroundTaskIdentifier];
+                    }
+                } error:&error];
+                if (error == nil) {
+                    NSLog(@"保存成功");
+                }
+            } else if (status == PHAuthorizationStatusRestricted) { // 无法访问相册
+                NSLog(@"因系统原因，无法访问相册！");
+            }
+
+        });
+    }];
+    
 }
 
 #pragma mark 切换前后摄像头
