@@ -1,5 +1,5 @@
 //
-//  H264EncodeVC.h
+//  AVCaptureSessionVC.h
 //  AudioVideo
 //
 //  Created by Myron on 2019/10/28.
@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface H264EncodeVC : UIViewController
+@interface AVCaptureSessionVC : UIViewController
 
 @end
 

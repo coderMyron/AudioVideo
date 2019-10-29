@@ -7,7 +7,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="H264EncodeVC">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AVCaptureSessionVC">
             <connections>
                 <outlet property="flashAutoButton" destination="bUe-9j-12w" id="bpd-JS-qtx"/>
                 <outlet property="flashOffButton" destination="dmZ-8O-hfC" id="uc4-QH-tBk"/>
@@ -83,7 +83,7 @@
                         <constraint firstItem="bUe-9j-12w" firstAttribute="centerY" secondItem="xOP-Vt-5Fb" secondAttribute="centerY" id="ze3-eh-mZM"/>
                     </constraints>
                 </view>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="focus" translatesAutoresizingMaskIntoConstraints="NO" id="Jok-Pp-TMS">
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.0" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="focus" translatesAutoresizingMaskIntoConstraints="NO" id="Jok-Pp-TMS">
                     <rect key="frame" x="175" y="367" width="64" height="64"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 </imageView>

@@ -15,7 +15,7 @@
 #import "AVPlayerVC.h"
 #import "AVAssetImageVC.h"
 #import "ImagePickVC.h"
-#import "H264EncodeVC.h"
+#import "AVCaptureSessionVC.h"
 
 @interface SoundTableViewController ()
 
@@ -98,7 +98,7 @@
             break;
         }
         case 9:{
-            H264EncodeVC *vc = [[H264EncodeVC alloc] init];
+            AVCaptureSessionVC *vc = [[AVCaptureSessionVC alloc] init];
             [self.navigationController pushViewController:vc animated:YES];
             break;
         }

@@ -57,8 +57,8 @@
 		A1824D89235C5D77004D8C52 /* AVAudioPlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A1824D77235C5D77004D8C52 /* AVAudioPlayerViewController.m */; };
 		A182CCEA236335F0009579BB /* FreeStreamerVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A182CCE8236335F0009579BB /* FreeStreamerVC.m */; };
 		A182CCEB236335F0009579BB /* FreeStreamerVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = A182CCE9236335F0009579BB /* FreeStreamerVC.xib */; };
-		A188ECC1236735A900817E00 /* H264EncodeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A188ECBF236735A900817E00 /* H264EncodeVC.m */; };
-		A188ECC2236735A900817E00 /* H264EncodeVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = A188ECC0236735A900817E00 /* H264EncodeVC.xib */; };
+		A188ECC1236735A900817E00 /* AVCaptureSessionVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A188ECBF236735A900817E00 /* AVCaptureSessionVC.m */; };
+		A188ECC2236735A900817E00 /* AVCaptureSessionVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = A188ECC0236735A900817E00 /* AVCaptureSessionVC.xib */; };
 		A1BB8E192361E3F500F243DC /* AVAudioRecorderVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A1BB8E172361E3F500F243DC /* AVAudioRecorderVC.m */; };
 		A1BB8E1A2361E3F500F243DC /* AVAudioRecorderVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1BB8E182361E3F500F243DC /* AVAudioRecorderVC.xib */; };
 		A1E0B74323647784005E3AE3 /* AVAssetImageVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A1E0B74223647784005E3AE3 /* AVAssetImageVC.m */; };
@@ -154,9 +154,9 @@
 		A182CCE7236335F0009579BB /* FreeStreamerVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FreeStreamerVC.h; sourceTree = "<group>"; };
 		A182CCE8236335F0009579BB /* FreeStreamerVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FreeStreamerVC.m; sourceTree = "<group>"; };
 		A182CCE9236335F0009579BB /* FreeStreamerVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FreeStreamerVC.xib; sourceTree = "<group>"; };
-		A188ECBE236735A900817E00 /* H264EncodeVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = H264EncodeVC.h; sourceTree = "<group>"; };
-		A188ECBF236735A900817E00 /* H264EncodeVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = H264EncodeVC.m; sourceTree = "<group>"; };
-		A188ECC0236735A900817E00 /* H264EncodeVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = H264EncodeVC.xib; sourceTree = "<group>"; };
+		A188ECBE236735A900817E00 /* AVCaptureSessionVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AVCaptureSessionVC.h; sourceTree = "<group>"; };
+		A188ECBF236735A900817E00 /* AVCaptureSessionVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AVCaptureSessionVC.m; sourceTree = "<group>"; };
+		A188ECC0236735A900817E00 /* AVCaptureSessionVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AVCaptureSessionVC.xib; sourceTree = "<group>"; };
 		A1BB8E162361E3F500F243DC /* AVAudioRecorderVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AVAudioRecorderVC.h; sourceTree = "<group>"; };
 		A1BB8E172361E3F500F243DC /* AVAudioRecorderVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AVAudioRecorderVC.m; sourceTree = "<group>"; };
 		A1BB8E182361E3F500F243DC /* AVAudioRecorderVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AVAudioRecorderVC.xib; sourceTree = "<group>"; };
@@ -293,7 +293,7 @@
 		A1824D5D235C5D77004D8C52 /* Class */ = {
 			isa = PBXGroup;
 			children = (
-				A188ECBD2367357200817E00 /* H264编码 */,
+				A188ECBD2367357200817E00 /* AVCaptureSession */,
 				A14A64202365943B001102A0 /* UIImagePicker */,
 				A1E0B740236476FD005E3AE3 /* AVAssetImageGenerator  */,
 				A14CFBAF23643C5600E5E92C /* AVPlayer */,
@@ -370,14 +370,14 @@
 			path = MusicPlayer;
 			sourceTree = "<group>";
 		};
-		A188ECBD2367357200817E00 /* H264编码 */ = {
+		A188ECBD2367357200817E00 /* AVCaptureSession */ = {
 			isa = PBXGroup;
 			children = (
-				A188ECBE236735A900817E00 /* H264EncodeVC.h */,
-				A188ECBF236735A900817E00 /* H264EncodeVC.m */,
-				A188ECC0236735A900817E00 /* H264EncodeVC.xib */,
+				A188ECBE236735A900817E00 /* AVCaptureSessionVC.h */,
+				A188ECBF236735A900817E00 /* AVCaptureSessionVC.m */,
+				A188ECC0236735A900817E00 /* AVCaptureSessionVC.xib */,
 			);
-			path = "H264编码";
+			path = AVCaptureSession;
 			sourceTree = "<group>";
 		};
 		A1BB8E152361E38B00F243DC /* AVAudioRecorder */ = {
@@ -460,7 +460,7 @@
 				A1824D83235C5D77004D8C52 /* sound1.mp3 in Resources */,
 				A1824D80235C5D77004D8C52 /* SoundEffectViewController.xib in Resources */,
 				A143F378235B5936006180EC /* LaunchScreen.storyboard in Resources */,
-				A188ECC2236735A900817E00 /* H264EncodeVC.xib in Resources */,
+				A188ECC2236735A900817E00 /* AVCaptureSessionVC.xib in Resources */,
 				A106D2ED235F50F900557E26 /* MusicPlayerVC.xib in Resources */,
 				A1824D7A235C5D77004D8C52 /* zaolei.jpg in Resources */,
 				A14A642523659467001102A0 /* ImagePickVC.xib in Resources */,
@@ -490,7 +490,7 @@
 				A1824D86235C5D77004D8C52 /* MyAVAudioPlayer.m in Sources */,
 				A14CFBB223643C8C00E5E92C /* AVPlayerVC.m in Sources */,
 				A1824D7D235C5D77004D8C52 /* ViewController.m in Sources */,
-				A188ECC1236735A900817E00 /* H264EncodeVC.m in Sources */,
+				A188ECC1236735A900817E00 /* AVCaptureSessionVC.m in Sources */,
 				A10068EB236337C000FE7EFB /* caching_stream.cpp in Sources */,
 				A1824D88235C5D77004D8C52 /* MediaInfo.m in Sources */,
 				A182CCEA236335F0009579BB /* FreeStreamerVC.m in Sources */,

@@ -1,19 +1,19 @@
 //
-//  H264EncodeVC.m
+//  AVCaptureSessionVC.m
 //  AudioVideo
 //
 //  Created by Myron on 2019/10/28.
 //  Copyright © 2019 Myron. All rights reserved.
 //
 
-#import "H264EncodeVC.h"
+#import "AVCaptureSessionVC.h"
 #import <AVFoundation/AVFoundation.h>
 #import <AssetsLibrary/AssetsLibrary.h>
-
+#import <Photos/Photos.h>
 
 typedef void(^PropertyChangeBlock)(AVCaptureDevice *captureDevice);
 
-@interface H264EncodeVC ()
+@interface AVCaptureSessionVC ()
 
 @property (strong,nonatomic) AVCaptureSession *captureSession; //负责输入和输出设备之间的数据传递
 @property (strong,nonatomic) AVCaptureDeviceInput *captureDeviceInput;//负责从AVCaptureDevice获得输入数据
@@ -28,7 +28,7 @@ typedef void(^PropertyChangeBlock)(AVCaptureDevice *captureDevice);
 
 @end
 
-@implementation H264EncodeVC
+@implementation AVCaptureSessionVC
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -114,13 +114,49 @@ typedef void(^PropertyChangeBlock)(AVCaptureDevice *captureDevice);
         if (imageDataSampleBuffer) {
             NSData *imageData=[AVCaptureStillImageOutput jpegStillImageNSDataRepresentation:imageDataSampleBuffer];
             UIImage *image=[UIImage imageWithData:imageData];
-//            UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil);
-            NSLog(@"拍照成功");
+//            UIImageWriteToSavedPhotosAlbum(image, self, @selector(image:didFinishSavingWithError:contextInfo:), nil);
+            //过时了
 //            ALAssetsLibrary *assetsLibrary=[[ALAssetsLibrary alloc]init];
 //            [assetsLibrary writeImageToSavedPhotosAlbum:[image CGImage] orientation:(ALAssetOrientation)[image imageOrientation] completionBlock:nil];
+            
+            PHAuthorizationStatus oldStatus = [PHPhotoLibrary authorizationStatus];
+            [PHPhotoLibrary requestAuthorization:^(PHAuthorizationStatus status) {
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    NSLog(@"status %ld",status);
+                    if (status == PHAuthorizationStatusDenied) { // 用户拒绝当前App访问相册
+                        if (oldStatus != PHAuthorizationStatusNotDetermined) {
+                            NSLog(@"提醒用户打开开关");
+                        }
+                    } else if (status == PHAuthorizationStatusAuthorized) { // 用户允许当前App访问相册
+                        NSError *error = nil;
+                        __block NSString *assetID = nil;
+                        // 保存图片到【相机胶卷】
+                        [[PHPhotoLibrary sharedPhotoLibrary] performChangesAndWait:^{
+                            assetID = [PHAssetChangeRequest creationRequestForAssetFromImage:image].placeholderForCreatedAsset.localIdentifier;
+                        } error:&error];
+                        if (error != nil) {
+                            NSLog(@"拍照成功");
+                        }
+                    } else if (status == PHAuthorizationStatusRestricted) { // 无法访问相册
+                        NSLog(@"因系统原因，无法访问相册！");
+                    }
+
+                });
+            }];
+            
+            
         }
         
     }];
+}
+
+- (void)image:(UIImage *)image didFinishSavingWithError:(NSError *)error contextInfo:(void *)contextInfo {
+    if (error) {
+        NSLog(@"保存失败");
+    } else {
+        NSLog(@"保存成功");
+    }
+
 }
 
 #pragma mark 切换前后摄像头
