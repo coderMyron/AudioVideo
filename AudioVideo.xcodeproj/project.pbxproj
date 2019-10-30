@@ -57,6 +57,7 @@
 		A1824D89235C5D77004D8C52 /* AVAudioPlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A1824D77235C5D77004D8C52 /* AVAudioPlayerViewController.m */; };
 		A182CCEA236335F0009579BB /* FreeStreamerVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A182CCE8236335F0009579BB /* FreeStreamerVC.m */; };
 		A182CCEB236335F0009579BB /* FreeStreamerVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = A182CCE9236335F0009579BB /* FreeStreamerVC.xib */; };
+		A185CCC22369CA9B00519BEE /* ImageDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A185CCC12369CA9B00519BEE /* ImageDetailViewController.m */; };
 		A188ECC1236735A900817E00 /* AVCaptureSessionVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A188ECBF236735A900817E00 /* AVCaptureSessionVC.m */; };
 		A188ECC2236735A900817E00 /* AVCaptureSessionVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = A188ECC0236735A900817E00 /* AVCaptureSessionVC.xib */; };
 		A1BB8E192361E3F500F243DC /* AVAudioRecorderVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A1BB8E172361E3F500F243DC /* AVAudioRecorderVC.m */; };
@@ -154,6 +155,8 @@
 		A182CCE7236335F0009579BB /* FreeStreamerVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FreeStreamerVC.h; sourceTree = "<group>"; };
 		A182CCE8236335F0009579BB /* FreeStreamerVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FreeStreamerVC.m; sourceTree = "<group>"; };
 		A182CCE9236335F0009579BB /* FreeStreamerVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FreeStreamerVC.xib; sourceTree = "<group>"; };
+		A185CCC02369CA9B00519BEE /* ImageDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ImageDetailViewController.h; sourceTree = "<group>"; };
+		A185CCC12369CA9B00519BEE /* ImageDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ImageDetailViewController.m; sourceTree = "<group>"; };
 		A188ECBE236735A900817E00 /* AVCaptureSessionVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AVCaptureSessionVC.h; sourceTree = "<group>"; };
 		A188ECBF236735A900817E00 /* AVCaptureSessionVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AVCaptureSessionVC.m; sourceTree = "<group>"; };
 		A188ECC0236735A900817E00 /* AVCaptureSessionVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AVCaptureSessionVC.xib; sourceTree = "<group>"; };
@@ -376,6 +379,8 @@
 				A188ECBE236735A900817E00 /* AVCaptureSessionVC.h */,
 				A188ECBF236735A900817E00 /* AVCaptureSessionVC.m */,
 				A188ECC0236735A900817E00 /* AVCaptureSessionVC.xib */,
+				A185CCC02369CA9B00519BEE /* ImageDetailViewController.h */,
+				A185CCC12369CA9B00519BEE /* ImageDetailViewController.m */,
 			);
 			path = AVCaptureSession;
 			sourceTree = "<group>";
@@ -507,6 +512,7 @@
 				A1824D84235C5D77004D8C52 /* SoundEffectTools.m in Sources */,
 				A14CFBAC23642C7400E5E92C /* MPMoviePlayerVC.m in Sources */,
 				A10068E5236337C000FE7EFB /* id3_parser.cpp in Sources */,
+				A185CCC22369CA9B00519BEE /* ImageDetailViewController.m in Sources */,
 				A1824D82235C5D77004D8C52 /* SoundEffectViewController.m in Sources */,
 				A10068EC236337C000FE7EFB /* FSXMLHttpRequest.m in Sources */,
 				A1824D7C235C5D77004D8C52 /* SoundTableViewController.m in Sources */,

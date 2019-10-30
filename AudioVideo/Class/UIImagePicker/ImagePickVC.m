@@ -107,7 +107,7 @@
         }else{
             _imagePicker.cameraCaptureMode=UIImagePickerControllerCameraCaptureModePhoto;
         }
-        _imagePicker.allowsEditing = YES;//允许编辑
+//        _imagePicker.allowsEditing = YES;//允许编辑
         _imagePicker.delegate = self;//设置代理，检测操作
         UIView *view = [[UIView alloc] init];
         view.backgroundColor = [UIColor redColor];

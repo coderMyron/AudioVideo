@@ -10,6 +10,7 @@
 #import <AVFoundation/AVFoundation.h>
 #import <AssetsLibrary/AssetsLibrary.h>
 #import <Photos/Photos.h>
+#import "ImageDetailViewController.h"
 
 typedef void(^PropertyChangeBlock)(AVCaptureDevice *captureDevice);
 
@@ -182,31 +183,37 @@ typedef void(^PropertyChangeBlock)(AVCaptureDevice *captureDevice);
 //            ALAssetsLibrary *assetsLibrary=[[ALAssetsLibrary alloc]init];
 //            [assetsLibrary writeImageToSavedPhotosAlbum:[image CGImage] orientation:(ALAssetOrientation)[image imageOrientation] completionBlock:nil];
             
-            PHAuthorizationStatus oldStatus = [PHPhotoLibrary authorizationStatus];
-            [PHPhotoLibrary requestAuthorization:^(PHAuthorizationStatus status) {
-                dispatch_async(dispatch_get_main_queue(), ^{
-                    NSLog(@"status %ld",status);
-                    if (status == PHAuthorizationStatusDenied) { // 用户拒绝当前App访问相册
-                        if (oldStatus != PHAuthorizationStatusNotDetermined) {
-                            NSLog(@"提醒用户打开开关");
-                        }
-                    } else if (status == PHAuthorizationStatusAuthorized) { // 用户允许当前App访问相册
-                        NSError *error = nil;
-                        __block NSString *assetID = nil;
-                        // 保存图片到【相机胶卷】
-                        [[PHPhotoLibrary sharedPhotoLibrary] performChangesAndWait:^{
-                            assetID = [PHAssetChangeRequest creationRequestForAssetFromImage:image].placeholderForCreatedAsset.localIdentifier;
-                        } error:&error];
-                        if (error == nil) {
-                            NSLog(@"拍照成功");
-                        }
-                    } else if (status == PHAuthorizationStatusRestricted) { // 无法访问相册
-                        NSLog(@"因系统原因，无法访问相册！");
-                    }
-
-                });
-            }];
+            //保存图片
+//            PHAuthorizationStatus oldStatus = [PHPhotoLibrary authorizationStatus];
+//            [PHPhotoLibrary requestAuthorization:^(PHAuthorizationStatus status) {
+//                dispatch_async(dispatch_get_main_queue(), ^{
+//                    NSLog(@"status %ld",status);
+//                    if (status == PHAuthorizationStatusDenied) { // 用户拒绝当前App访问相册
+//                        if (oldStatus != PHAuthorizationStatusNotDetermined) {
+//                            NSLog(@"提醒用户打开开关");
+//                        }
+//                    } else if (status == PHAuthorizationStatusAuthorized) { // 用户允许当前App访问相册
+//                        NSError *error = nil;
+//                        __block NSString *assetID = nil;
+//                        // 保存图片到【相机胶卷】
+//                        [[PHPhotoLibrary sharedPhotoLibrary] performChangesAndWait:^{
+//                            assetID = [PHAssetChangeRequest creationRequestForAssetFromImage:image].placeholderForCreatedAsset.localIdentifier;
+//                        } error:&error];
+//                        if (error == nil) {
+//                            NSLog(@"拍照成功");
+//                        }
+//                    } else if (status == PHAuthorizationStatusRestricted) { // 无法访问相册
+//                        NSLog(@"因系统原因，无法访问相册！");
+//                    }
+//
+//                });
+//            }];
             
+            //增加自定义截图
+            ImageDetailViewController*imageView = [[ImageDetailViewController alloc] init];
+            imageView.data = imageData;
+            //[self presentViewController:imageView animated:NO completion:nil];
+            [self.navigationController pushViewController:imageView animated:YES];
             
         }
         
